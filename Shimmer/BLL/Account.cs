@@ -9,6 +9,7 @@ namespace Shimmer.BLL
     public class Account
     {
         //Define class properties
+        public int Id { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
@@ -21,8 +22,9 @@ namespace Shimmer.BLL
 
         }
         //Define a constructor to initialize all the properties
-        public Account(string fullname, string email, string password, string phoneno, string usertype)
+        public Account(int id,string fullname, string email, string password, string phoneno, string usertype)
         {
+            Id = id;
             FullName = fullname;
             Email = email;
             Password = password;

@@ -73,8 +73,6 @@ namespace Shimmer
                     if (eventAssociationList[i].Status == 1)
                     {
                         confirmedAttendee += 1;
-                        // todo add user to list 
-                        
                     }
                     if (eventAssociationList[i].UserId == 1 && eventAssociationList[i].Status>=0)// todo change this to current user
                     {
@@ -85,6 +83,7 @@ namespace Shimmer
                 }
 
                 lbTest.Text = confirmedAttendee.ToString();
+
 
             }
             else

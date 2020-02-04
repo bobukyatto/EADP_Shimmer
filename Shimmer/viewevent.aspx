@@ -14,7 +14,7 @@
     </nav>
     <div class="row">
         <div class="col-sm-8">
-            <asp:Image ID="imgEventImage" CssClass="img-fluid w-100 rounded mb-1" runat="server" />
+            <asp:Image ID="imgEventImage" CssClass="img-fluid w-100 rounded mb-1 max-height" runat="server" Height="400px" />
         </div>
         <div class="col">
             <div class="row pb-4">
@@ -79,16 +79,32 @@
     </div>
     <div class="row p-3">
         <asp:Label ID="lbHeadingDescription" runat="server" Text="About the event" Font-Bold="True" Font-Size="Larger"></asp:Label>
-       
-        
     </div>
-    <div class="row p-3">
+    <div class="row p-3 border-bottom">
          <asp:Label ID="lbEventDescription" runat="server" Text=""></asp:Label>
-        <hr />
     </div>
 
-    <br />
-    <asp:Label ID="lbTest" runat="server" Text="Test"></asp:Label>
+    <div class="row">
+        <asp:Repeater ID="repeaterConfirmedAttendees" runat="server" DataSourceID="attendeeDataSource">
+            <ItemTemplate>
+                <div class="col-4 h-100 mb-5">
+                    <div class="card">
+                        <img src="image/" class="card-img-top" alt="..." height="50px">
+                        <div class="card-body text-center">
+                            <%# Eval("fullname") %>
+                        </div>
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
+        <asp:SqlDataSource ID="attendeeDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT Account.fullname, Account.email, Account.password, Account.phoneno, Account.usertype, Account.id FROM Account INNER JOIN EventAssociation ON Account.id = EventAssociation.userId WHERE (EventAssociation.eventId = @eventId)">
+            <SelectParameters>
+                <asp:Parameter DefaultValue="1" Name="eventId" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:Label ID="lbTest" runat="server" Text=""></asp:Label>
+    </div>
+    
     <table class="table">
         <thead>
             <tr>

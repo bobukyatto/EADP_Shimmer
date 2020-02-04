@@ -30,7 +30,7 @@
             <ItemTemplate>
                 <div class="col-4 h-100 mb-5">
                     <div class="card">
-                        <img src="image/<%# Eval("eventImage") %>" class="card-img-top" alt="...">
+                        <img src="image/<%# Eval("eventImage") %>" class="card-img-top" alt="..." height="250px">
                         <div class="card-body text-center">
                             <asp:Label ID="lbEventName" runat="server" Text=<%# Eval("eventName") %> Font-Bold="True"></asp:Label>
                             <p class="card-text"><small class="text-muted">By <%# Eval("eventOrganizedBy") %></small></p>

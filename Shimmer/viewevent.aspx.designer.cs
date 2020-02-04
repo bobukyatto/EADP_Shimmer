@@ -139,6 +139,24 @@ namespace Shimmer {
         protected global::System.Web.UI.WebControls.Label lbEventDescription;
         
         /// <summary>
+        /// repeaterConfirmedAttendees control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater repeaterConfirmedAttendees;
+        
+        /// <summary>
+        /// attendeeDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource attendeeDataSource;
+        
+        /// <summary>
         /// lbTest control.
         /// </summary>
         /// <remarks>
