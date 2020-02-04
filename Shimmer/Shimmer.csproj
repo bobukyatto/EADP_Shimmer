@@ -77,7 +77,13 @@
     <Content Include="Global.asax" />
     <Content Include="Image\default.jpg" />
     <Content Include="Image\event.jpg" />
+    <Content Include="Image\orgPhoto.png" />
+    <Content Include="Image\publicPhoto.png" />
     <Content Include="index.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="RegisterOrg.aspx" />
+    <Content Include="RegisterPublic.aspx" />
     <Content Include="viewevent.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -89,7 +95,9 @@
     <Compile Include="addevent.aspx.designer.cs">
       <DependentUpon>addevent.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BLL\Account.cs" />
     <Compile Include="BLL\Event.cs" />
+    <Compile Include="DAL\AccountDAO.cs" />
     <Compile Include="DAL\EventDAO.cs" />
     <Compile Include="editevent.aspx.cs">
       <DependentUpon>editevent.aspx</DependentUpon>
@@ -115,7 +123,35 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterOrg.aspx.cs">
+      <DependentUpon>RegisterOrg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterOrg.aspx.designer.cs">
+      <DependentUpon>RegisterOrg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterPublic.aspx.cs">
+      <DependentUpon>RegisterPublic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterPublic.aspx.designer.cs">
+      <DependentUpon>RegisterPublic.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Shimmer.Master.cs">
       <DependentUpon>Shimmer.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
