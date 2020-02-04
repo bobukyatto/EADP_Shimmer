@@ -49,9 +49,15 @@ namespace Shimmer
             if (ValidateInput())
             {
                 Account acc = new Account();
-                if (TbPassLogin.Text == acc.CheckPassword(TbEmailLogin.Text))
+                var checkacctobj = acc.CheckPassword(TbEmailLogin.Text);
+                if (checkacctobj is null)
+                {
+                    lblMsgLogin.Text = "Please enter valid email and password!";
+                }
+                else if (TbPassLogin.Text == checkacctobj.Password)
                 {
                     Session["email"] = TbEmailLogin.Text;
+                    Session["userId"] = checkacctobj.Id;
                     Response.Redirect("index.aspx");
                 }
                 else

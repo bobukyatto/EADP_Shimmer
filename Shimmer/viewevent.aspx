@@ -84,25 +84,26 @@
          <asp:Label ID="lbEventDescription" runat="server" Text=""></asp:Label>
     </div>
 
-    <div class="row">
+    <div class="row p-3">
+        <asp:Label ID="lbHeadingConfirmedAttendee" runat="server" Text="Confirmed Attendees:" Font-Bold="True" Font-Size="Larger"></asp:Label>
+        <asp:Label ID="lbEventConfirmedAttendee" runat="server" Text="" Font-Bold="True" Font-Size="Larger"></asp:Label>
+    </div>
+    <div class="row p-3">
         <asp:Repeater ID="repeaterConfirmedAttendees" runat="server" DataSourceID="attendeeDataSource">
             <ItemTemplate>
-                <div class="col-4 h-100 mb-5">
-                    <div class="card">
-                        <img src="image/" class="card-img-top" alt="..." height="50px">
-                        <div class="card-body text-center">
-                            <%# Eval("fullname") %>
-                        </div>
-                    </div>
+                <div class="m-2 p-2 border shadow text-center">
+                    <asp:Image ID="imgConfirmedAttendees" ImageUrl=<%# "image/"+ Eval("image") %> CssClass="img-thumbnail" runat="server" Height="50px" Width="50px" /><br />
+                    <%# Eval("fullname") %>
                 </div>
             </ItemTemplate>
         </asp:Repeater>
-        <asp:SqlDataSource ID="attendeeDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT Account.fullname, Account.email, Account.password, Account.phoneno, Account.usertype, Account.id FROM Account INNER JOIN EventAssociation ON Account.id = EventAssociation.userId WHERE (EventAssociation.eventId = @eventId)">
+        <asp:SqlDataSource ID="attendeeDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT Account.fullname, Account.email, Account.password, Account.phoneno, Account.usertype, Account.Id, Account.image FROM Account INNER JOIN EventAssociation ON Account.Id = EventAssociation.userId WHERE (EventAssociation.eventId = @eventId) AND (EventAssociation.status &gt;= @eventStatus)">
             <SelectParameters>
-                <asp:Parameter DefaultValue="1" Name="eventId" Type="Int32" />
+                <asp:QueryStringParameter DefaultValue="1" Name="eventId" QueryStringField="eventid" Type="Int32" />
+                <asp:Parameter DefaultValue="1" Name="eventStatus" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:Label ID="lbTest" runat="server" Text=""></asp:Label>
+        
     </div>
     
     <table class="table">

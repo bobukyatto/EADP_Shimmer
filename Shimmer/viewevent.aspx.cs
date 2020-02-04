@@ -82,7 +82,7 @@ namespace Shimmer
 
                 }
 
-                lbTest.Text = confirmedAttendee.ToString();
+                lbEventConfirmedAttendee.Text = " "+confirmedAttendee.ToString();
 
 
             }

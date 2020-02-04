@@ -21,9 +21,20 @@ namespace Shimmer.BLL
         {
 
         }
-        //Define a constructor to initialize all the properties
+
         public Account(string fullname, string email, string password, string phoneno, string usertype)
         {
+            FullName = fullname;
+            Email = email;
+            Password = password;
+            Phone = phoneno;
+            UserType = usertype;
+        }
+
+        //Define a constructor to initialize all the properties
+        public Account(int id,string fullname, string email, string password, string phoneno, string usertype)
+        {
+            Id = id;
             FullName = fullname;
             Email = email;
             Password = password;
@@ -38,7 +49,7 @@ namespace Shimmer.BLL
             return result;
         }
 
-        public string CheckPassword(string password)
+        public Account CheckPassword(string password)
         {
             AccountDAO dao = new AccountDAO();
             return dao.CheckPassword(password);

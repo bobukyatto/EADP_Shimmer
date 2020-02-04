@@ -46,8 +46,9 @@ namespace Shimmer.DAL
 
             return result;
         }
+        
 
-        public string CheckPassword(string email)
+        public Account CheckPassword(string email)
         {
             //Step 1 -  Define a connection to the database by getting
             //          the connection string from web.config
@@ -55,7 +56,7 @@ namespace Shimmer.DAL
             SqlConnection myConn = new SqlConnection(DBConnect);
 
             //Step 2 -  Create a DataAdapter to retrieve data from the database table
-            string sqlStmt = "Select password from dbo.[Account] where email = @paraEmail";
+            string sqlStmt = "Select * from dbo.[Account] where email = @paraEmail";
             SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
 
             da.SelectCommand.Parameters.AddWithValue("@paraEmail", email);
@@ -67,20 +68,27 @@ namespace Shimmer.DAL
             da.Fill(ds);
 
             //Step 5 -  Read data from DataSet.
-            string acctPass = null;
+            Account verifyAccount = null;
+
             int rec_cnt = ds.Tables[0].Rows.Count;
             if (rec_cnt == 1)
             {
                 DataRow row = ds.Tables[0].Rows[0];  // Sql command returns only one record
+                int id = int.Parse(row["id"].ToString());
+                string fullname = row["fullname"].ToString();
+                string eemail = row["email"].ToString();
                 string password = row["password"].ToString();
-                acctPass = password;
+                string phone = row["phoneno"].ToString();
+                string usertype = row["usertype"].ToString();
+
+                verifyAccount = new Account(id, fullname, eemail, password, phone, usertype);
             }
             else
             {
-                acctPass = null;
+                verifyAccount = null;
             }
 
-            return acctPass;
+            return verifyAccount;
         }
     }
 }
