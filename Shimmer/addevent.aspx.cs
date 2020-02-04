@@ -11,9 +11,18 @@ namespace Shimmer
 {
     public partial class addevent : System.Web.UI.Page
     {
+        int currentUserId;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["userId"] is null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                currentUserId = int.Parse(Session["userId"].ToString());
+            }
         }
 
         private bool inputValidate()
@@ -39,6 +48,22 @@ namespace Shimmer
             {
                 lbMessage.Text += "Please enter the name of the person in charge" + "<br/>";
             }
+            if (String.IsNullOrEmpty(tbEventDate.Text))
+            {
+                lbMessage.Text += "Please enter the date of event" + "<br/>";
+            }
+            if (String.IsNullOrEmpty(tbEventTime.Text))
+            {
+                lbMessage.Text += "Please enter the time of event" + "<br/>";
+            }
+            if (int.Parse(tbEventDurationHours.Text) > 23)
+            {
+                lbMessage.Text += "Please enter valid number of hours less than 24" + "<br/>";
+            }
+            if (int.Parse(tbEventDurationHours.Text) > 59)
+            {
+                lbMessage.Text += "Please enter valid number of minutes, less than 60" + "<br/>";
+            }
 
             bool minAttenResult = int.TryParse(tbEventMinAttendee.Text, out int minAtten);
             bool maxAttenResult = int.TryParse(tbEventMaxAttendee.Text, out int maxAtten);
@@ -62,7 +87,7 @@ namespace Shimmer
             if (inputValidate())
             {
                 // check if name + date for duplicate later
-                eventobj.OrganizedBy = 0;
+                eventobj.OrganizedBy = currentUserId;
                 eventobj.Name = tbEventName.Text;
                 eventobj.Image = "default.jpg";
                 eventobj.Description = tbEventDescription.Text;

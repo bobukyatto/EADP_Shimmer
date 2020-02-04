@@ -13,10 +13,22 @@ namespace Shimmer
         //declare public vars
         string eventid;
         Event eventobj;
+        int currentUserId;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            // google maps api
+            string APIKeyPart1 = "AIzaSyCWLbnx9H1I-";
+            string APIKeyPart2 = "HnwzHh9kbL8PyZvYGJydiQ";
+            if (Session["userId"] is null)
+            {
+                
+            }
+            else
+            {
+                currentUserId = int.Parse(Session["userId"].ToString());
+            }
+
             btnLeaveEvent.Visible = false;
             eventid = Request.QueryString["eventid"];
             if (eventid != null)
@@ -51,7 +63,7 @@ namespace Shimmer
 
                 hlEventLocation.Text = eventobj.Location;
                 hlEventLocation.NavigateUrl = "https://www.google.com/maps/search/?api=1&query=" + eventobj.Location;
-                imgbtnEventMap.ImageUrl = "https://maps.googleapis.com/maps/api/staticmap?center="+"Singapore "+eventobj.Location+"&zoom=17&size=600x300&key=AIzaSyCWLbnx9H1I-HnwzHh9kbL8PyZvYGJydiQ";
+                imgbtnEventMap.ImageUrl = "https://maps.googleapis.com/maps/api/staticmap?center="+"Singapore "+eventobj.Location+"&zoom=17&size=600x300&key="+APIKeyPart1+APIKeyPart2;
 
                 if (String.IsNullOrEmpty(eventobj.Image) )
                 {
@@ -63,9 +75,10 @@ namespace Shimmer
                     imgEventImage.ImageUrl = "image/" + eventobj.Image;
                 }
 
+                
                 int confirmedAttendee = 0;
                 List<Event.eventAssociation> eventAssociationList = eventobj.GetAllEventAssociationById(int.Parse(eventid));
-                //todo create list of users to display 
+                //todo create list of users to display  .done
 
                 for (int i = 0; i< eventAssociationList.Count; i++)
                 {
@@ -74,11 +87,19 @@ namespace Shimmer
                     {
                         confirmedAttendee += 1;
                     }
-                    if (eventAssociationList[i].UserId == 1 && eventAssociationList[i].Status>=0)// todo change this to current user
+                    if (Session["userId"] is null)
                     {
-                        btnJoinEvent.Visible = false;
-                        btnLeaveEvent.Visible = true;
+
                     }
+                    else
+                    {
+                        if (eventAssociationList[i].UserId == currentUserId && eventAssociationList[i].Status >= 0)// todo change this to current user .done
+                        {
+                            btnJoinEvent.Visible = false;
+                            btnLeaveEvent.Visible = true;
+                        }
+                    }
+                    
 
                 }
 
@@ -99,15 +120,18 @@ namespace Shimmer
 
         protected void btnJoinEvent_Click(object sender, EventArgs e)
         {
-
+            if (Session["userId"] is null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             //check if user had already joined
             List<Event.eventAssociation> eventAssociationList = eventobj.GetAllEventAssociationById(int.Parse(eventid));
             for (int i = 0; i < eventAssociationList.Count; i++)
             {
 
-                if (eventAssociationList[i].UserId == 1)
+                if (eventAssociationList[i].UserId == currentUserId)
                 {
-                    eventobj.UserReJoinEvent(int.Parse(eventid), 1);
+                    eventobj.UserReJoinEvent(int.Parse(eventid), currentUserId);
                     Response.Redirect("events.aspx");
                 }
 
@@ -115,18 +139,21 @@ namespace Shimmer
 
 
             }
+
+            if (eventobj.UserJoinEvent(int.Parse(eventid), currentUserId) == 1)
+            {
+                //success, todo have some popup
+                Response.Redirect("events.aspx");
+            }
+            else
+            {
+                //fail
+            }
+
             // if empty list 
             if (!eventAssociationList.Any())
             {
-                if (eventobj.UserJoinEvent(int.Parse(eventid), 1) == 1)
-                {
-                    //success, todo have some popup
-                    Response.Redirect("events.aspx");
-                }
-                else
-                {
-                    //fail
-                }
+                
             }
 
             
@@ -134,8 +161,12 @@ namespace Shimmer
 
         protected void btnLeaveEvent_Click(object sender, EventArgs e)
         {
+            if (Session["userId"] is null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             //todo change 1 to current user
-            eventobj.UserLeaveEvent(int.Parse(eventid), 1);
+            eventobj.UserLeaveEvent(int.Parse(eventid), currentUserId);
             Response.Redirect("events.aspx");
         }
     }

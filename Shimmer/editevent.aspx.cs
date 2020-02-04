@@ -11,13 +11,28 @@ namespace Shimmer
 {
     public partial class editevent : System.Web.UI.Page
     {
+        int currentUserId;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userId"] is null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                currentUserId = int.Parse(Session["userId"].ToString());
+            }
+
             string eventid = Request.QueryString["eventid"];
             if (eventid != null)
             {
                 Event eventobj = new Event().GetEventById(int.Parse(eventid));
                 if (eventobj is null) // todo check if owner or admin
+                {
+                    Response.Redirect("events.aspx");
+                }
+                else if (eventobj.OrganizedBy != currentUserId && Session["userType"].ToString() != "Admin")
                 {
                     Response.Redirect("events.aspx");
                 }

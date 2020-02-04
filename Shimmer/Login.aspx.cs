@@ -58,6 +58,7 @@ namespace Shimmer
                 {
                     Session["email"] = TbEmailLogin.Text;
                     Session["userId"] = checkacctobj.Id;
+                    Session["userType"] = checkacctobj.UserType;
                     Response.Redirect("index.aspx");
                 }
                 else
