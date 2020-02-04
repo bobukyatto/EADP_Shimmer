@@ -22,9 +22,8 @@ namespace Shimmer.BLL
 
         }
         //Define a constructor to initialize all the properties
-        public Account(int id,string fullname, string email, string password, string phoneno, string usertype)
+        public Account(string fullname, string email, string password, string phoneno, string usertype)
         {
-            Id = id;
             FullName = fullname;
             Email = email;
             Password = password;
