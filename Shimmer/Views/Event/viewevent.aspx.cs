@@ -67,12 +67,12 @@ namespace Shimmer
 
                 if (String.IsNullOrEmpty(eventobj.Image) )
                 {
-                    imgEventImage.ImageUrl = "image/default.jpg";
+                    imgEventImage.ImageUrl = "../../Public/Image/default.jpg";
                 }
                 else
                 {
 
-                    imgEventImage.ImageUrl = "image/" + eventobj.Image;
+                    imgEventImage.ImageUrl = "../../Public/Image/Uploads/" + eventobj.Image;
                 }
 
                 

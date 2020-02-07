@@ -67,6 +67,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Public\Image\test.png" />
+    <Content Include="Public\Image\Uploads\21wmiezj.jpg" />
+    <Content Include="Public\Image\Uploads\3pnbev2m.png" />
+    <Content Include="Public\Image\Uploads\5pdg0pof.jpg" />
+    <Content Include="Public\Image\Uploads\Annotation 2020-02-04 033022.png" />
+    <Content Include="Public\Image\Uploads\arl0zap5.jpg" />
+    <Content Include="Public\Image\Uploads\default.jpg" />
+    <Content Include="Public\Image\Uploads\etje04e4.jpg" />
+    <Content Include="Public\Image\Uploads\event.jpg" />
+    <Content Include="Public\Image\Uploads\ibfkqvin.jpg" />
+    <Content Include="Public\Image\Uploads\imijhlpz.jpg" />
+    <Content Include="Public\Image\Uploads\isjk4dnw.jpg" />
+    <Content Include="Public\Image\Uploads\kkkcbgfp.jpg" />
+    <Content Include="Public\Image\Uploads\kp4hnvhl..jpg" />
+    <Content Include="Public\Image\Uploads\mfcifdqz.png" />
+    <Content Include="Public\Image\Uploads\mmpuqld2.jpg" />
+    <Content Include="Public\Image\Uploads\n4x5swwm.jpg" />
+    <Content Include="Public\Image\Uploads\o5s0unxq.jpg" />
+    <Content Include="Public\Image\Uploads\orgPhoto.png" />
+    <Content Include="Public\Image\Uploads\pst3vk53.png" />
+    <Content Include="Public\Image\Uploads\publicPhoto.png" />
+    <Content Include="Public\Image\Uploads\pxrdpphx.jpg" />
+    <Content Include="Public\Image\Uploads\rj3ctubd.jpg" />
+    <Content Include="Public\Image\Uploads\test.png" />
+    <Content Include="Public\Image\Uploads\waczpml4.jpg" />
     <Content Include="Views\Event\addevent.aspx" />
     <Content Include="App_Data\ShimmerDatabase.mdf" />
     <Content Include="App_Data\ShimmerDatabase_log.ldf">
@@ -79,6 +104,11 @@
     <Content Include="Public\Image\event.jpg" />
     <Content Include="Public\Image\orgPhoto.png" />
     <Content Include="Public\Image\publicPhoto.png" />
+    <Content Include="Views\Group\CreateGroup.aspx" />
+    <Content Include="Views\Group\GroupApplicationManagement.aspx" />
+    <Content Include="Views\Group\GroupDetail.aspx" />
+    <Content Include="Views\Group\GroupList.aspx" />
+    <Content Include="Views\Group\MyApplication.aspx" />
     <Content Include="Views\index.aspx" />
     <Content Include="Views\User\Login.aspx" />
     <Content Include="Views\User\Register.aspx" />
@@ -116,6 +146,41 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Group\CreateGroup.aspx.cs">
+      <DependentUpon>CreateGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Group\CreateGroup.aspx.designer.cs">
+      <DependentUpon>CreateGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Group\GroupApplicationManagement.aspx.cs">
+      <DependentUpon>GroupApplicationManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Group\GroupApplicationManagement.aspx.designer.cs">
+      <DependentUpon>GroupApplicationManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Group\GroupDetail.aspx.cs">
+      <DependentUpon>GroupDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Group\GroupDetail.aspx.designer.cs">
+      <DependentUpon>GroupDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Group\GroupList.aspx.cs">
+      <DependentUpon>GroupList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Group\GroupList.aspx.designer.cs">
+      <DependentUpon>GroupList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Group\MyApplication.aspx.cs">
+      <DependentUpon>MyApplication.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Group\MyApplication.aspx.designer.cs">
+      <DependentUpon>MyApplication.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -181,6 +246,9 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <Folder Include="Public\CSS\" />
+    <Folder Include="Public\Image\Default\" />
+    <Folder Include="Public\Image\Uploads\Group\" />
+    <Folder Include="Public\Image\Uploads\User\" />
     <Folder Include="Public\Javascript\" />
   </ItemGroup>
   <PropertyGroup>
