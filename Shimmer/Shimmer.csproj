@@ -67,89 +67,90 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="addevent.aspx" />
+    <Content Include="Views\Event\addevent.aspx" />
     <Content Include="App_Data\ShimmerDatabase.mdf" />
     <Content Include="App_Data\ShimmerDatabase_log.ldf">
       <DependentUpon>ShimmerDatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="editevent.aspx" />
-    <Content Include="events.aspx" />
+    <Content Include="Views\Event\editevent.aspx" />
+    <Content Include="Views\Event\events.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Image\default.jpg" />
-    <Content Include="Image\event.jpg" />
-    <Content Include="Image\orgPhoto.png" />
-    <Content Include="Image\publicPhoto.png" />
-    <Content Include="index.aspx" />
-    <Content Include="Login.aspx" />
-    <Content Include="Register.aspx" />
-    <Content Include="RegisterOrg.aspx" />
-    <Content Include="RegisterPublic.aspx" />
-    <Content Include="viewevent.aspx" />
+    <Content Include="Public\Image\default.jpg" />
+    <Content Include="Public\Image\event.jpg" />
+    <Content Include="Public\Image\orgPhoto.png" />
+    <Content Include="Public\Image\publicPhoto.png" />
+    <Content Include="Views\index.aspx" />
+    <Content Include="Views\User\Login.aspx" />
+    <Content Include="Views\User\Register.aspx" />
+    <Content Include="Views\User\RegisterOrg.aspx" />
+    <Content Include="Views\User\RegisterPublic.aspx" />
+    <Content Include="Views\Event\viewevent.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addevent.aspx.cs">
+    <Compile Include="Views\Event\addevent.aspx.cs">
       <DependentUpon>addevent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="addevent.aspx.designer.cs">
+    <Compile Include="Views\Event\addevent.aspx.designer.cs">
       <DependentUpon>addevent.aspx</DependentUpon>
     </Compile>
     <Compile Include="BLL\Account.cs" />
     <Compile Include="BLL\Event.cs" />
+    <Compile Include="BLL\Group.cs" />
     <Compile Include="DAL\AccountDAO.cs" />
     <Compile Include="DAL\EventDAO.cs" />
-    <Compile Include="editevent.aspx.cs">
+    <Compile Include="Views\Event\editevent.aspx.cs">
       <DependentUpon>editevent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="editevent.aspx.designer.cs">
+    <Compile Include="Views\Event\editevent.aspx.designer.cs">
       <DependentUpon>editevent.aspx</DependentUpon>
     </Compile>
-    <Compile Include="events.aspx.cs">
+    <Compile Include="Views\Event\events.aspx.cs">
       <DependentUpon>events.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="events.aspx.designer.cs">
+    <Compile Include="Views\Event\events.aspx.designer.cs">
       <DependentUpon>events.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="index.aspx.cs">
+    <Compile Include="Views\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="index.aspx.designer.cs">
+    <Compile Include="Views\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
+    <Compile Include="Views\User\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
+    <Compile Include="Views\User\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Register.aspx.cs">
+    <Compile Include="Views\User\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Register.aspx.designer.cs">
+    <Compile Include="Views\User\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="RegisterOrg.aspx.cs">
+    <Compile Include="Views\User\RegisterOrg.aspx.cs">
       <DependentUpon>RegisterOrg.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RegisterOrg.aspx.designer.cs">
+    <Compile Include="Views\User\RegisterOrg.aspx.designer.cs">
       <DependentUpon>RegisterOrg.aspx</DependentUpon>
     </Compile>
-    <Compile Include="RegisterPublic.aspx.cs">
+    <Compile Include="Views\User\RegisterPublic.aspx.cs">
       <DependentUpon>RegisterPublic.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RegisterPublic.aspx.designer.cs">
+    <Compile Include="Views\User\RegisterPublic.aspx.designer.cs">
       <DependentUpon>RegisterPublic.aspx</DependentUpon>
     </Compile>
     <Compile Include="Shimmer.Master.cs">
@@ -159,16 +160,16 @@
     <Compile Include="Shimmer.Master.designer.cs">
       <DependentUpon>Shimmer.Master</DependentUpon>
     </Compile>
-    <Compile Include="viewevent.aspx.cs">
+    <Compile Include="Views\Event\viewevent.aspx.cs">
       <DependentUpon>viewevent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="viewevent.aspx.designer.cs">
+    <Compile Include="Views\Event\viewevent.aspx.designer.cs">
       <DependentUpon>viewevent.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="Views\User\packages.config" />
     <Content Include="Shimmer.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -178,8 +179,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Javascript\" />
     <Folder Include="Models\" />
+    <Folder Include="Public\CSS\" />
+    <Folder Include="Public\Javascript\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
