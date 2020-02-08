@@ -112,7 +112,7 @@ namespace Shimmer.DAL
             }
 
             return emp;
-        }
+            }
 
         public int Insert(Event eventobj)
         {
@@ -224,8 +224,7 @@ namespace Shimmer.DAL
 
             // Step 2 - Instantiate SqlCommand instance to add record 
             //          with INSERT statement
-            string sqlStmt = "INSERT INTO EventAssociation (eventId, userId) " +
-                "VALUES (@paraEventId, @paraUserId)";
+            string sqlStmt = "INSERT INTO EventAssociation (eventId, userId) " + "VALUES (@paraEventId, @paraUserId)";
             sqlCmd = new SqlCommand(sqlStmt, myConn);
 
             sqlCmd.Parameters.AddWithValue("@paraEventId", eventid);
