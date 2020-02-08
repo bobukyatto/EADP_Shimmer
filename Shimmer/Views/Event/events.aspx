@@ -30,7 +30,7 @@
             <ItemTemplate>
                 <div class="col-4 h-100 mb-5">
                     <div class="card">
-                        <img src="../../Public/Image/Uploads/<%# Eval("eventImage") %>" class="card-img-top" alt="..." height="250px">
+                        <img src="/Public/Image/Uploads/<%# Eval("eventImage") %>" class="card-img-top" alt="..." height="250px">
                         <div class="card-body text-center">
                             <asp:Label ID="lbEventName" runat="server" Text=<%# Eval("eventName") %> Font-Bold="True"></asp:Label>
                             <p class="card-text"><small class="text-muted">By <%# Eval("eventOrganizedBy") %></small></p>
@@ -47,7 +47,7 @@
 
         </asp:Repeater>
     </div>
-    <asp:SqlDataSource ID="eventDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT * FROM [Event] WHERE ([eventStatus] = @eventStatus)">
+    <asp:SqlDataSource ID="eventDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT * FROM [Event] WHERE ([eventStatus] = @eventStatus) ORDER BY Id DESC">
         <SelectParameters>
             <asp:Parameter DefaultValue="1" Name="eventStatus" Type="Int32" />
         </SelectParameters>

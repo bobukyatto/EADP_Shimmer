@@ -18,11 +18,15 @@ namespace Shimmer
                 btnCreateEvent.Visible = false;
             }
 
+            
+
             System.Data.DataView dv = (DataView)eventDataSource.Select(DataSourceSelectArguments.Empty);
             int numEvents = (dv.Count + 1); //find another way if theres time
 
             
         }
+
+
 
         
 
