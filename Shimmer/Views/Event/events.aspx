@@ -19,9 +19,12 @@
         <asp:Label ID="lbEmpty" runat="server" CssClass="mx-auto" Text=""></asp:Label>
 
         <asp:Label ID="lbSortBy" runat="server" CssClass="float-right pr-1" Text="Sort By:"></asp:Label>
-        <asp:DropDownList ID="ddlSort" CssClass="float-right" runat="server" OnSelectedIndexChanged="ddlSort_SelectedIndexChanged">
-            <asp:ListItem Selected="True">Popularity</asp:ListItem>
+        <asp:DropDownList ID="ddlSort" CssClass="float-right" runat="server" OnSelectedIndexChanged="ddlSort_SelectedIndexChanged" AutoPostBack="True">
+            <asp:ListItem Selected="True">Recent (Open)</asp:ListItem>
+            <asp:ListItem>Past (Closed)</asp:ListItem>
             <asp:ListItem>Upcoming</asp:ListItem>
+            <asp:ListItem>Duration (Short)</asp:ListItem>
+            <asp:ListItem>Duration (Long)</asp:ListItem>
         </asp:DropDownList>
     </div>
     

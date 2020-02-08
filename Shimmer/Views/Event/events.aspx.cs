@@ -23,6 +23,29 @@ namespace Shimmer
             System.Data.DataView dv = (DataView)eventDataSource.Select(DataSourceSelectArguments.Empty);
             int numEvents = (dv.Count + 1); //find another way if theres time
 
+
+            if (IsPostBack)
+            {
+                if (ddlSort.SelectedValue == "Past (Closed)")
+                {
+                    eventDataSource.SelectCommand = "SELECT * FROM [Event] WHERE ([eventStatus] = 0) ORDER BY eventStartDateTime";
+                }
+                else if (ddlSort.SelectedValue == "Upcoming")
+                {
+                    eventDataSource.SelectCommand = "SELECT * FROM [Event] WHERE ([eventStatus] = @eventStatus) ORDER BY eventStartDateTime";
+                }
+                else if (ddlSort.SelectedValue=="Duration (Short)")
+                {
+                    eventDataSource.SelectCommand = "SELECT * FROM [Event] WHERE ([eventStatus] = @eventStatus) ORDER BY eventDuration";
+                }
+                else if (ddlSort.SelectedValue == "Duration (Long)")
+                {
+                    eventDataSource.SelectCommand = "SELECT * FROM [Event] WHERE ([eventStatus] = @eventStatus) ORDER BY eventDuration DESC";
+                }
+
+                eventRepeater.DataBind();
+            
+            }
             
         }
 
