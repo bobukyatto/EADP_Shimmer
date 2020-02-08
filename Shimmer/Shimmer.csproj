@@ -751,7 +751,6 @@
     <Content Include="Public\vendor\swiper\js\swiper.esm.js" />
     <Content Include="Public\vendor\swiper\js\swiper.js" />
     <Content Include="Public\vendor\swiper\js\swiper.min.js" />
-    <Content Include="Stylesheet\register.css" />
     <Content Include="Views\Event\addevent.aspx" />
     <Content Include="Views\Event\editevent.aspx" />
     <Content Include="Views\Event\events.aspx" />
