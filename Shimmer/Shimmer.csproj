@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ShimmerDatabase.mdf" />
+    <Content Include="App_Data\ShimmerDatabase_log.ldf">
+      <DependentUpon>ShimmerDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Public\CSS\custom.css" />
     <Content Include="Public\CSS\style.default.css" />
     <Content Include="Public\CSS\style.default.min.css" />
@@ -117,10 +121,6 @@
     <Content Include="Public\Javascript\map-detail.js" />
     <Content Include="Public\Javascript\theme.js" />
     <Content Include="Views\Event\addevent.aspx" />
-    <Content Include="App_Data\ShimmerDatabase.mdf" />
-    <Content Include="App_Data\ShimmerDatabase_log.ldf">
-      <DependentUpon>ShimmerDatabase.mdf</DependentUpon>
-    </Content>
     <Content Include="Views\Event\editevent.aspx" />
     <Content Include="Views\Event\events.aspx" />
     <Content Include="Global.asax" />
