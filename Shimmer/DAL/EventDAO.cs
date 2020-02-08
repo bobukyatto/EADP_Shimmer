@@ -12,12 +12,15 @@ namespace Shimmer.DAL
 {
     public class EventDAO
     {
-       public List<Event> SelectAll()
+       public List<Event> SelectAll(string sortBy = "latest")
         {
             string DBConnect = ConfigurationManager.ConnectionStrings["ShimmerConnectionString"].ConnectionString;
             SqlConnection mySQLConnection = new SqlConnection(DBConnect);
 
-            string SQLStatement = "Select * from Event";
+            string SQLStatement= "Select * from Event ORDER BY Id DESC";
+            
+
+
             SqlDataAdapter da = new SqlDataAdapter(SQLStatement, mySQLConnection);
 
             DataSet ds = new DataSet();

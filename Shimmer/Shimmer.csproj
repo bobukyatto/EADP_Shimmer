@@ -67,6 +67,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Public\CSS\custom.css" />
+    <Content Include="Public\CSS\style.default.css" />
+    <Content Include="Public\CSS\style.default.min.css" />
+    <Content Include="Public\CSS\style.green.css" />
+    <Content Include="Public\CSS\style.green.min.css" />
+    <Content Include="Public\CSS\style.pink.css" />
+    <Content Include="Public\CSS\style.pink.min.css" />
+    <Content Include="Public\CSS\style.red.css" />
+    <Content Include="Public\CSS\style.red.min.css" />
+    <Content Include="Public\CSS\style.sea.css" />
+    <Content Include="Public\CSS\style.sea.min.css" />
+    <Content Include="Public\CSS\style.violet.css" />
+    <Content Include="Public\CSS\style.violet.min.css" />
+    <Content Include="Public\Image\indexbg.jpg" />
+    <Content Include="Public\Image\indexRestaurant.jpg" />
     <Content Include="Public\Image\test.png" />
     <Content Include="Public\Image\Uploads\21wmiezj.jpg" />
     <Content Include="Public\Image\Uploads\3pnbev2m.png" />
@@ -74,8 +89,10 @@
     <Content Include="Public\Image\Uploads\Annotation 2020-02-04 033022.png" />
     <Content Include="Public\Image\Uploads\arl0zap5.jpg" />
     <Content Include="Public\Image\Uploads\default.jpg" />
+    <Content Include="Public\Image\Uploads\dice.jpg" />
     <Content Include="Public\Image\Uploads\etje04e4.jpg" />
     <Content Include="Public\Image\Uploads\event.jpg" />
+    <Content Include="Public\Image\Uploads\Group\default.jpg" />
     <Content Include="Public\Image\Uploads\ibfkqvin.jpg" />
     <Content Include="Public\Image\Uploads\imijhlpz.jpg" />
     <Content Include="Public\Image\Uploads\isjk4dnw.jpg" />
@@ -92,6 +109,13 @@
     <Content Include="Public\Image\Uploads\rj3ctubd.jpg" />
     <Content Include="Public\Image\Uploads\test.png" />
     <Content Include="Public\Image\Uploads\waczpml4.jpg" />
+    <Content Include="Public\Javascript\datepicker-category.js" />
+    <Content Include="Public\Javascript\datepicker-detail.js" />
+    <Content Include="Public\Javascript\demo.js" />
+    <Content Include="Public\Javascript\forms-dropzone.js" />
+    <Content Include="Public\Javascript\map-category.js" />
+    <Content Include="Public\Javascript\map-detail.js" />
+    <Content Include="Public\Javascript\theme.js" />
     <Content Include="Views\Event\addevent.aspx" />
     <Content Include="App_Data\ShimmerDatabase.mdf" />
     <Content Include="App_Data\ShimmerDatabase_log.ldf">
@@ -234,6 +258,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Public\CSS\style.default.min.css.map" />
+    <Content Include="Public\CSS\style.green.min.css.map" />
+    <Content Include="Public\CSS\style.pink.min.css.map" />
+    <Content Include="Public\CSS\style.red.min.css.map" />
+    <Content Include="Public\CSS\style.sea.min.css.map" />
+    <Content Include="Public\CSS\style.violet.min.css.map" />
+    <Content Include="Public\Javascript\bookings.json" />
+    <Content Include="Public\Javascript\restaurants-geojson.json" />
+    <Content Include="Public\Javascript\rooms-geojson.json" />
     <None Include="Views\User\packages.config" />
     <Content Include="Shimmer.Master" />
     <None Include="Web.Debug.config">
@@ -245,11 +278,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Public\CSS\" />
     <Folder Include="Public\Image\Default\" />
-    <Folder Include="Public\Image\Uploads\Group\" />
     <Folder Include="Public\Image\Uploads\User\" />
-    <Folder Include="Public\Javascript\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
