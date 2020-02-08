@@ -71,7 +71,58 @@
     <Content Include="App_Data\ShimmerDatabase_log.ldf">
       <DependentUpon>ShimmerDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Security.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.Security.Claims.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Security.Principal.Windows.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\Shimmer.dll" />
+    <Content Include="bin\Shimmer.pdb" />
+    <Content Include="obj\Debug\Shimmer.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\Shimmer.dll" />
+    <Content Include="obj\Debug\Shimmer.pdb" />
+    <Content Include="Public\CSS\components-bootstrap.html" />
+    <Content Include="Public\CSS\components-directory.html" />
     <Content Include="Public\CSS\custom.css" />
+    <Content Include="Public\CSS\docs-changelog.html" />
+    <Content Include="Public\CSS\docs-credits.html" />
+    <Content Include="Public\CSS\docs-customizing-css.html" />
+    <Content Include="Public\CSS\docs-directory-structure.html" />
+    <Content Include="Public\CSS\docs-gulp.html" />
+    <Content Include="Public\CSS\docs-introduction.html" />
     <Content Include="Public\CSS\style.default.css" />
     <Content Include="Public\CSS\style.default.min.css" />
     <Content Include="Public\CSS\style.green.css" />
@@ -700,6 +751,7 @@
     <Content Include="Public\vendor\swiper\js\swiper.esm.js" />
     <Content Include="Public\vendor\swiper\js\swiper.js" />
     <Content Include="Public\vendor\swiper\js\swiper.min.js" />
+    <Content Include="Stylesheet\register.css" />
     <Content Include="Views\Event\addevent.aspx" />
     <Content Include="Views\Event\editevent.aspx" />
     <Content Include="Views\Event\events.aspx" />
@@ -722,6 +774,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Views\Event\addevent.aspx.cs">
       <DependentUpon>addevent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -851,6 +906,31 @@
     <Content Include="Public\vendor\jquery.cookie\cookie.jquery.json" />
     <Content Include="Public\vendor\nouislider\CHANGELOG.MD" />
     <Content Include="Public\vendor\prismjs\components.json" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="bin\Shimmer.dll.config" />
+    <Content Include="obj\Debug\build.force" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\Shimmer.csproj.CopyComplete" />
+    <Content Include="obj\Debug\Shimmer.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\Shimmer.csprojAssemblyReference.cache" />
+    <Content Include="Public\CSS\components-bootstrap.jade" />
+    <Content Include="Public\CSS\components-directory.jade" />
+    <Content Include="Public\CSS\docs-changelog.jade" />
+    <Content Include="Public\CSS\docs-credits.jade" />
+    <Content Include="Public\CSS\docs-customizing-css.jade" />
+    <Content Include="Public\CSS\docs-directory-structure.jade" />
+    <Content Include="Public\CSS\docs-gulp.jade" />
+    <Content Include="Public\CSS\docs-introduction.jade" />
     <None Include="Views\User\packages.config" />
     <Content Include="Shimmer.Master" />
     <None Include="Web.Debug.config">
@@ -862,6 +942,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Public\Image\Default\" />
     <Folder Include="Public\Image\Uploads\User\" />
     <Folder Include="Public\vendor\jquery.cookie\test\" />
