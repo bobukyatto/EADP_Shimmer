@@ -22,7 +22,7 @@
                         <p>
                             By registering as a public user, you will be able to take part in events, donate, etc.
                         </p>
-                        <asp:Button class="button" ID="publicRegister" runat="server" Text="Button" />
+                        <asp:Button class="button" ID="publicRegister" runat="server" Text="Register" OnClick="publicRegister_Click" />
                     </div>
                     <div class="column">
                         <h2>Organization</h2>
@@ -31,7 +31,7 @@
                             By registering as an organization user, you will be able to put up your organization's events, 
                             donation, etc.
                         </p>
-                        <asp:Button class="button" ID="orgRegister" runat="server" Text="Button" />
+                        <asp:Button class="button" ID="orgRegister" runat="server" Text="Register" OnClick="orgRegister_Click" />
                     </div>
                 </div>
                 

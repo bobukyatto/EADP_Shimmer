@@ -84,6 +84,7 @@
     <Content Include="Register.aspx" />
     <Content Include="RegisterOrg.aspx" />
     <Content Include="RegisterPublic.aspx" />
+    <Content Include="Stylesheet\register.css" />
     <Content Include="viewevent.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>

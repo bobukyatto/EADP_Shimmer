@@ -13,5 +13,16 @@ namespace Shimmer
         {
 
         }
+
+        protected void publicRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegisterPublic.aspx");
+        }
+
+        protected void orgRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegisterOrg.aspx");
+
+        }
     }
 }
