@@ -256,10 +256,10 @@ namespace Shimmer.DAL
 
             // Step 2 - Instantiate SqlCommand instance to add record 
             //          with INSERT statement
-            string sqlStmt = " UPDATE EventAssociation SET status = 1 WHERE eventId = " + eventid + " AND userId = " + userid;
+            string sqlStmt = " UPDATE EventAssociation SET status =@paraStatus WHERE eventId = " + eventid + " AND userId = " + userid;
             sqlCmd = new SqlCommand(sqlStmt, myConn);
 
-            sqlCmd.Parameters.AddWithValue("@paraStatus", 0);
+            sqlCmd.Parameters.AddWithValue("@paraStatus", "Pending");
 
             // Step 4 Open connection the execute NonQuery of sql command   
             myConn.Open();
@@ -287,7 +287,7 @@ namespace Shimmer.DAL
             string sqlStmt = " UPDATE EventAssociation SET status = @paraStatus WHERE eventId = " + eventid+" AND userId = " + userid;
             sqlCmd = new SqlCommand(sqlStmt, myConn);
 
-            sqlCmd.Parameters.AddWithValue("@paraStatus", -1);
+            sqlCmd.Parameters.AddWithValue("@paraStatus", "Left");
 
             // Step 4 Open connection the execute NonQuery of sql command   
             myConn.Open();
@@ -320,7 +320,7 @@ namespace Shimmer.DAL
                 int eventId = int.Parse(row["eventId"].ToString());
                 int userId = int.Parse(row["userId"].ToString());
                 int groupId = int.Parse(row["groupId"].ToString());
-                int status = int.Parse(row["status"].ToString());
+                string status = row["status"].ToString();
                 int statusBy = int.Parse(row["statusBy"].ToString());
                 string statusReason= row["statusReason"].ToString();
                 int reminder = int.Parse(row["reminder"].ToString());

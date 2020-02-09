@@ -87,7 +87,7 @@ namespace Shimmer.BLL
             public int EventId { get; set; }
             public int UserId { get; set; }
             public int GroupId { get; set; }
-            public int Status { get; set; }
+            public string Status { get; set; }
             public int StatusBy { get; set; }
             public string StatusReason { get; set; }
             public int Reminder { get; set; }
@@ -97,7 +97,7 @@ namespace Shimmer.BLL
 
             }
 
-            public eventAssociation(int eventId, int userId, int groupId, int status, int statusBy, string statusReason, int reminder)
+            public eventAssociation(int eventId, int userId, int groupId, string status, int statusBy, string statusReason, int reminder)
             {
                 EventId = eventId;
                 UserId = userId;

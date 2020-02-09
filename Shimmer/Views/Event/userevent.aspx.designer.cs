@@ -13,21 +13,39 @@ namespace Shimmer {
     public partial class userevent {
         
         /// <summary>
-        /// Repeater1 control.
+        /// eventOpenRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+        protected global::System.Web.UI.WebControls.Repeater eventOpenRepeater;
         
         /// <summary>
-        /// joinedEventSqlDataSource control.
+        /// eventOpenSqlDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource joinedEventSqlDataSource;
+        protected global::System.Web.UI.WebControls.SqlDataSource eventOpenSqlDataSource;
+        
+        /// <summary>
+        /// eventClosedRepeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater eventClosedRepeater;
+        
+        /// <summary>
+        /// eventClosedSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource eventClosedSqlDataSource;
     }
 }

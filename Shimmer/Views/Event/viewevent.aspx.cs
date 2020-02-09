@@ -30,6 +30,7 @@ namespace Shimmer
             }
 
             btnLeaveEvent.Visible = false;
+            btnInfoEvent.Visible = false;
             eventid = Request.QueryString["eventid"];
             if (eventid != null)
             {
@@ -83,7 +84,7 @@ namespace Shimmer
                 for (int i = 0; i< eventAssociationList.Count; i++)
                 {
                     
-                    if (eventAssociationList[i].Status == 1)
+                    if (eventAssociationList[i].Status == "Accepted")
                     {
                         confirmedAttendee += 1;
                     }
@@ -93,7 +94,22 @@ namespace Shimmer
                     }
                     else
                     {
-                        if (eventAssociationList[i].UserId == currentUserId && eventAssociationList[i].Status >= 0)// todo change this to current user .done
+                        if (eventAssociationList[i].UserId == currentUserId && (eventAssociationList[i].Status == "Rejected" || eventAssociationList[i].Status == "Accepted"))// todo change this to current user .done
+                        {
+                            btnJoinEvent.Visible = false;
+                            btnLeaveEvent.Visible = false;
+                            if (eventAssociationList[i].Status == "Accepted")
+                            {
+                                btnInfoEvent.CssClass = "btn btn-success btn-lg btn-block";
+                            }
+                            else
+                            {
+                                btnInfoEvent.CssClass = "btn btn-danger btn-lg btn-block";
+                            }
+                            btnInfoEvent.Text = eventAssociationList[i].Status;
+                            btnInfoEvent.Visible = true;
+                        }
+                        else if (eventAssociationList[i].UserId == currentUserId && eventAssociationList[i].Status =="Pending")// todo change this to current user .done
                         {
                             btnJoinEvent.Visible = false;
                             btnLeaveEvent.Visible = true;
@@ -109,7 +125,7 @@ namespace Shimmer
             }
             else
             {
-                Response.Redirect("events.aspx");
+                Response.Redirect("/Views/Event/events.aspx");
             }
         }
 
@@ -122,7 +138,7 @@ namespace Shimmer
         {
             if (Session["userId"] is null)
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("/Views/User/Login.aspx");
             }
             //check if user had already joined
             List<Event.eventAssociation> eventAssociationList = eventobj.GetAllEventAssociationById(int.Parse(eventid));
@@ -132,7 +148,7 @@ namespace Shimmer
                 if (eventAssociationList[i].UserId == currentUserId)
                 {
                     eventobj.UserReJoinEvent(int.Parse(eventid), currentUserId);
-                    Response.Redirect("events.aspx");
+                    Response.Redirect("/Views/Event/events.aspx");
                 }
 
                 
@@ -143,7 +159,7 @@ namespace Shimmer
             if (eventobj.UserJoinEvent(int.Parse(eventid), currentUserId) == 1)
             {
                 //success, todo have some popup
-                Response.Redirect("events.aspx");
+                Response.Redirect("/Views/Event/events.aspx");
             }
             else
             {
@@ -163,11 +179,11 @@ namespace Shimmer
         {
             if (Session["userId"] is null)
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("/Views/User/Login.aspx");
             }
             //todo change 1 to current user
             eventobj.UserLeaveEvent(int.Parse(eventid), currentUserId);
-            Response.Redirect("events.aspx");
+            Response.Redirect("/Views/Event/events.aspx");
         }
     }
 }

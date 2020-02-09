@@ -64,6 +64,7 @@
             </div>
             <div class="row text-center pr-3">
                 <asp:Button ID="btnJoinEvent" runat="server" CssClass="btn btn-primary btn-lg btn-block" Text="Join Event" OnClick="btnJoinEvent_Click" />
+                <asp:Button ID="btnInfoEvent" runat="server" Text="Default" disabled/>
                 <asp:Button ID="btnLeaveEvent" runat="server" CssClass="btn btn-danger btn-lg btn-block" Text="Leave Event" OnClick="btnLeaveEvent_Click"  />
             </div>
         </div>
@@ -87,10 +88,10 @@
                 </div>
             </ItemTemplate>
         </asp:Repeater>
-        <asp:SqlDataSource ID="attendeeDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT Account.fullname, Account.email, Account.password, Account.phoneno, Account.usertype, Account.Id, Account.image FROM Account INNER JOIN EventAssociation ON Account.Id = EventAssociation.userId WHERE (EventAssociation.eventId = @eventId) AND (EventAssociation.status &gt;= @eventStatus)">
+        <asp:SqlDataSource ID="attendeeDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT Account.fullname, Account.email, Account.password, Account.phoneno, Account.usertype, Account.Id, Account.image FROM Account INNER JOIN EventAssociation ON Account.Id = EventAssociation.userId WHERE (EventAssociation.status = @eventStatus) AND (EventAssociation.eventId = @eventId)">
             <SelectParameters>
+                <asp:Parameter DefaultValue="Accepted" Name="eventStatus" ConvertEmptyStringToNull="False" />
                 <asp:QueryStringParameter DefaultValue="1" Name="eventId" QueryStringField="eventid" Type="Int32" />
-                <asp:Parameter DefaultValue="1" Name="eventStatus" />
             </SelectParameters>
         </asp:SqlDataSource>
     </div>
