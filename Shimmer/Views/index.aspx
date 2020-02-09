@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shimmer.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="Shimmer.index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <section style="background-image: url(/Public/Image/indexbg.jpg);" class="d-flex align-items-center dark-overlay bg-cover">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <div class="mt-n5">
+        <section style="background-image: url(/Public/Image/indexbg.jpg);" class="d-flex align-items-center dark-overlay bg-cover">
       <div class="container py-6 py-lg-7 text-white overlay-content text-center"> 
         <div class="row">
           <div class="col-xl-10 mx-auto">
@@ -58,4 +59,6 @@
             
             
     </section>
+    </div>
+    
 </asp:Content>
