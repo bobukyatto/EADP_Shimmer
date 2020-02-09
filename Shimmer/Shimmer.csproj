@@ -759,6 +759,7 @@
     <Content Include="Public\Image\event.jpg" />
     <Content Include="Public\Image\orgPhoto.png" />
     <Content Include="Public\Image\publicPhoto.png" />
+    <Content Include="Views\Event\userevent.aspx" />
     <Content Include="Views\Group\CreateGroup.aspx" />
     <Content Include="Views\Group\GroupApplicationManagement.aspx" />
     <Content Include="Views\Group\GroupDetail.aspx" />
@@ -804,6 +805,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Event\userevent.aspx.cs">
+      <DependentUpon>userevent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Event\userevent.aspx.designer.cs">
+      <DependentUpon>userevent.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Group\CreateGroup.aspx.cs">
       <DependentUpon>CreateGroup.aspx</DependentUpon>
