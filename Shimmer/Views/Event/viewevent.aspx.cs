@@ -204,7 +204,18 @@ namespace Shimmer
         protected void btnGroupJoinEvent_Click(object sender, EventArgs e)
         {
             int groupId = int.Parse(ddlGroupList.SelectedValue);
-            eventobj.GroupJoinEvent(int.Parse(eventid), groupId);
+            try
+            {
+                eventobj.GroupJoinEvent(int.Parse(eventid), groupId);
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                Response.Redirect("/Views/Event/events.aspx");
+            }
+            catch (Exception) //Catch Others
+            {
+                Response.Redirect("/Views/index.aspx");
+            }
 
         }
     }

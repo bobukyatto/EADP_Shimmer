@@ -355,12 +355,12 @@ namespace Shimmer.DAL
             // Step 4 Open connection the execute NonQuery of sql command   
             myConn.Open();
             result = sqlCmd.ExecuteNonQuery();
-
             // Step 5 :Close connection
             myConn.Close();
 
             return result;
         }
+
 
     }
 }
