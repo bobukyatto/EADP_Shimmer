@@ -14,7 +14,7 @@ namespace Shimmer.Views.Donations
         {
             if (!IsPostBack)
             {
-                string id = Session["SSId"].ToString();
+                string id = Session["DonationId"].ToString();
                 Fundraiser obj = new Fundraiser();
                 Fundraiser fdR = obj.GetFdById(id);
                 lblId.Text = id;

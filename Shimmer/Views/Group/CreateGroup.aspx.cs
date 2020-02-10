@@ -31,7 +31,7 @@ namespace Shimmer
             {
                 if (imgUpload.HasFile)
                 {
-                    imgUpload.SaveAs(Server.MapPath("~//Public//Image//Uploads//" + imgUpload.FileName));
+                    imgUpload.SaveAs(Server.MapPath("../../Public/Image/Uploads/Group/" + imgUpload.FileName));
                     if (group.InsertGroup(group, groupName.Text, Convert.ToInt32(maxNo.Text), currentUserId, description.Text, imgUpload.FileName, RadioButton2.Checked ? 1 : 0) == 1)
                     {
                         group.InsertMember(group, Convert.ToInt32(currentUserId));
@@ -47,7 +47,7 @@ namespace Shimmer
                 }
                 else
                 {
-                    if (group.InsertGroup(group, groupName.Text, Convert.ToInt32(maxNo.Text), currentUserId, description.Text, "blog5.jpg", RadioButton2.Checked ? 1 : 0) == 1)
+                    if (group.InsertGroup(group, groupName.Text, Convert.ToInt32(maxNo.Text), currentUserId, description.Text, "default.jpg", RadioButton2.Checked ? 1 : 0) == 1)
                     {
                         group.InsertMember(group, Convert.ToInt32(currentUserId));
                         group.leaderCreateGroupRecord(group, group.getLeaderName(currentUserId));

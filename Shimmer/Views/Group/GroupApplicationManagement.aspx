@@ -1,6 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shimmer.Master" AutoEventWireup="true" CodeBehind="GroupApplicationManagement.aspx.cs" Inherits="Shimmer.GroupApplicationManagement" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="Index.Master" AutoEventWireup="true" CodeBehind="GroupApplicationManagement.aspx.cs" Inherits="Shimmer.GroupApplicationManagement" %>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="py-5">
       <div class="container">
@@ -61,7 +60,7 @@
           <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT * FROM [GroupApplication] WHERE (([Status] = @Status) AND ([GroupLeader] = @GroupLeader)) ORDER BY [Id] DESC">
               <SelectParameters>
                   <asp:Parameter DefaultValue="Pending" Name="Status" Type="String" />
-                  <asp:SessionParameter SessionField="Username" Name="GroupLeader" Type="Int32"></asp:SessionParameter>
+                  <asp:SessionParameter SessionField="userId" Name="GroupLeader" Type="Int32"></asp:SessionParameter>
               </SelectParameters>
           </asp:SqlDataSource>
       </div>

@@ -12,7 +12,7 @@ namespace Shimmer.Views.Donations
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string id = Session["id"].ToString();
+            string id = Session["DonationId"].ToString();
             lblID.Text = id;
             Fundraiser fdR = new Fundraiser();
             Fundraiser fdRList = fdR.GetFdById(id);
@@ -22,5 +22,11 @@ namespace Shimmer.Views.Donations
             lblDonGoal.Text = fdRList.donationGoal.ToString();
             lblCategory.Text = fdRList.category;
         }
+
+        protected void btnDonate_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FundraiserDonate.aspx");
+        }
+
     }
 }

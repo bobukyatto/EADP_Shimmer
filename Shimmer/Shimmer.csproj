@@ -754,6 +754,7 @@
     <Content Include="Views\Admin\UserTable.aspx" />
     <Content Include="Views\Donations\CreateFundraiser.aspx" />
     <Content Include="Views\Donations\Donations.aspx" />
+    <Content Include="Views\Donations\FundraiserDonate.aspx" />
     <Content Include="Views\Donations\FundraiserView.aspx" />
     <Content Include="Views\Donations\ManageFundraiser.aspx" />
     <Content Include="Views\Event\addevent.aspx" />
@@ -782,7 +783,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Donation.cs" />
     <Compile Include="BLL\Fundraiser.cs" />
+    <Compile Include="DAL\DonationDAO.cs" />
     <Compile Include="DAL\FundraiserDAO.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
@@ -807,6 +810,13 @@
     </Compile>
     <Compile Include="Views\Donations\Donations.aspx.designer.cs">
       <DependentUpon>Donations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Donations\FundraiserDonate.aspx.cs">
+      <DependentUpon>FundraiserDonate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Donations\FundraiserDonate.aspx.designer.cs">
+      <DependentUpon>FundraiserDonate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Donations\FundraiserView.aspx.cs">
       <DependentUpon>FundraiserView.aspx</DependentUpon>
