@@ -61,11 +61,11 @@ namespace Shimmer
                     Session["userType"] = checkacctobj.UserType;
                     if (Session["userType"].ToString() == "Admin")
                     {
-                        Response.Redirect("../Admin/UserTable.aspx");
+                        Response.Redirect("/Views/Admin/UserTable.aspx");
                     }
                     else
                     {
-                        Response.Redirect("../index.aspx");
+                        Response.Redirect("/Views/index.aspx");
                     }
                 }
                 else
