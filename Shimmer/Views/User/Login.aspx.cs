@@ -59,7 +59,14 @@ namespace Shimmer
                     Session["email"] = TbEmailLogin.Text;
                     Session["userId"] = checkacctobj.Id;
                     Session["userType"] = checkacctobj.UserType;
-                    Response.Redirect("/Views/index.aspx");
+                    if (Session["userType"].ToString() == "Admin")
+                    {
+                        Response.Redirect("../Admin/UserTable.aspx");
+                    }
+                    else
+                    {
+                        Response.Redirect("../index.aspx");
+                    }
                 }
                 else
                 {

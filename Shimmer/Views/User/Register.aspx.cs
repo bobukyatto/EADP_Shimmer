@@ -22,6 +22,7 @@ namespace Shimmer
         protected void orgRegister_Click(object sender, EventArgs e)
         {
             Response.Redirect("RegisterOrg.aspx");
+
         }
     }
 }

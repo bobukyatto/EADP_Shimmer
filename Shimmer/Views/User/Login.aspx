@@ -33,7 +33,7 @@
         <tr>
             <td class="auto-style2">Password:</td>
             <td>
-                <asp:TextBox ID="TbPassLogin" CssClass="form-control" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TbPassLogin" CssClass="form-control" TextMode="Password" runat="server"></asp:TextBox>
             </td>
         </tr>
        
