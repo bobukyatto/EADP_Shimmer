@@ -39,7 +39,7 @@ namespace Shimmer.Views.Donations
             switch (e.CommandName)
             {
                 case "LearnMore":
-                    Session["id"] = e.CommandArgument;
+                    Session["DonationId"] = e.CommandArgument;
                     Response.Redirect("FundraiserView.aspx");
                     break;
             }
@@ -53,8 +53,8 @@ namespace Shimmer.Views.Donations
         protected void GvDonation_SelectedIndexChanged(object sender, EventArgs e)
         {
             GridViewRow row = GvDonation.SelectedRow;
-            Session["SSId"] = row.Cells[0].Text;
-            Response.Redirect("FundraiserView.aspx");
+            Session["DonationId"] = row.Cells[0].Text;
+            Response.Redirect("ManageFundraiser.aspx");
         }
     }
 }

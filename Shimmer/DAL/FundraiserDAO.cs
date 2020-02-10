@@ -28,7 +28,7 @@ namespace Shimmer.DAL
             da.Fill(ds);
 
             //Step 5 -  Read data from DataSet to List
-            List<Fundraiser> tdMastList = new List<Fundraiser>();
+            List<Fundraiser> FdrList = new List<Fundraiser>();
             int rec_cnt = ds.Tables[0].Rows.Count;
             for (int i = 0; i < rec_cnt; i++)
             {
@@ -41,10 +41,10 @@ namespace Shimmer.DAL
                 string cat = row["category"].ToString();
                 Fundraiser obj = new Fundraiser(orgBy, name, desc, donationGoal, cat);
                 obj.id = Fdrid;
-                tdMastList.Add(obj);
+                FdrList.Add(obj);
             }
 
-            return tdMastList;
+            return FdrList;
         }
 
         public DataSet DSFundraisers()
