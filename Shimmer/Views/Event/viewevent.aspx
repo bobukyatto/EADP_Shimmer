@@ -107,7 +107,7 @@
         <asp:Repeater ID="repeaterConfirmedAttendees" runat="server" DataSourceID="attendeeDataSource">
             <ItemTemplate>
                 <div class="m-2 p-2 border shadow text-center">
-                    <asp:Image ID="imgConfirmedAttendees" ImageUrl=<%# "../../Public/Image/Uploads/"+ Eval("image") %> CssClass="img-thumbnail" runat="server" Height="75px" Width="75px" /><br />
+                    <asp:Image ID="imgConfirmedAttendees" ImageUrl=<%# "../../Public/Image/Uploads/User/"+ Eval("image") %> CssClass="img-thumbnail" runat="server" Height="75px" Width="75px" /><br />
                     <%# Eval("fullname") %>
                 </div>
             </ItemTemplate>
