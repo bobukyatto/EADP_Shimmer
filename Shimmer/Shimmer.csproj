@@ -751,6 +751,7 @@
     <Content Include="Public\vendor\swiper\js\swiper.esm.js" />
     <Content Include="Public\vendor\swiper\js\swiper.js" />
     <Content Include="Public\vendor\swiper\js\swiper.min.js" />
+    <Content Include="Views\Admin\UserTable.aspx" />
     <Content Include="Views\Donations\CreateFundraiser.aspx" />
     <Content Include="Views\Donations\Donations.aspx" />
     <Content Include="Views\Donations\FundraiserView.aspx" />
@@ -770,11 +771,14 @@
     <Content Include="Views\Group\GroupList.aspx" />
     <Content Include="Views\Group\MyApplication.aspx" />
     <Content Include="Views\index.aspx" />
+    <Content Include="Views\LogOut.aspx" />
     <Content Include="Views\User\Login.aspx" />
     <Content Include="Views\User\Register.aspx" />
     <Content Include="Views\User\RegisterOrg.aspx" />
     <Content Include="Views\User\RegisterPublic.aspx" />
     <Content Include="Views\Event\viewevent.aspx" />
+    <Content Include="Views\User\UpdateUser.aspx" />
+    <Content Include="Views\User\UserProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -783,6 +787,13 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Views\Admin\UserTable.aspx.cs">
+      <DependentUpon>UserTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\UserTable.aspx.designer.cs">
+      <DependentUpon>UserTable.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Donations\CreateFundraiser.aspx.cs">
       <DependentUpon>CreateFundraiser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -889,6 +900,13 @@
     <Compile Include="Views\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\User\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -931,6 +949,20 @@
     </Compile>
     <Compile Include="Views\Event\viewevent.aspx.designer.cs">
       <DependentUpon>viewevent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\UpdateUser.aspx.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\UpdateUser.aspx.designer.cs">
+      <DependentUpon>UpdateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

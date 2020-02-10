@@ -103,8 +103,6 @@ D:\Documents\EADP - ITP213\clonedProj\EADP_Shimmer\Shimmer\bin\roslyn\vbc.exe.co
 D:\Documents\EADP - ITP213\clonedProj\EADP_Shimmer\Shimmer\bin\roslyn\vbc.rsp
 D:\Documents\EADP - ITP213\clonedProj\EADP_Shimmer\Shimmer\bin\roslyn\VBCSCompiler.exe
 D:\Documents\EADP - ITP213\clonedProj\EADP_Shimmer\Shimmer\bin\roslyn\VBCSCompiler.exe.config
-D:\Documents\EADP - ITP213\clonedProj\EADP_Shimmer\Shimmer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-D:\Documents\EADP - ITP213\clonedProj\EADP_Shimmer\Shimmer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Documents\EADP - ITP213\clonedProj\EADP_Shimmer\Shimmer\obj\Debug\Shimmer.csprojAssemblyReference.cache
 D:\Documents\EADP - ITP213\clonedProj\EADP_Shimmer\Shimmer\obj\Debug\Shimmer.csproj.CoreCompileInputs.cache
 D:\Documents\EADP - ITP213\clonedProj\EADP_Shimmer\Shimmer\obj\Debug\Shimmer.csproj.CopyComplete
