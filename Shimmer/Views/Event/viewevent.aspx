@@ -15,7 +15,7 @@
     <asp:Label ID="testlb" runat="server" Text="Label"></asp:Label>
     <div class="row">
         <div class="col-sm-8">
-            <asp:Image ID="imgEventImage" CssClass="img-fluid w-100 rounded mb-1 max-height" runat="server" Height="400px" />
+            <asp:Image ID="imgEventImage" CssClass="img-fluid w-100 rounded mb-1 max-height" runat="server" Height="475px" />
         </div>
         <div class="col">
             <div class="row pb-4">
