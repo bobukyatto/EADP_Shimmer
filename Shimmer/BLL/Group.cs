@@ -307,5 +307,19 @@ namespace Shimmer
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public DataSet getOwnedGroups(int userId)
+        {
+            DataSet ds = new DataSet();
+            string DBConnect = ConfigurationManager.ConnectionStrings["ShimmerConnectionString"].ConnectionString;
+            SqlConnection Conn = new SqlConnection(DBConnect);
+
+            string command = "Select * From [Group] WHERE Leader = " + userId;
+            Conn.Open();
+            new SqlDataAdapter(command, Conn).Fill(ds);
+
+            Conn.Close();
+            return ds;
+        }
     }
 }

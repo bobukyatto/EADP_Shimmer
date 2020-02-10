@@ -12,7 +12,6 @@
             </li>
         </ol>
     </nav>
-    <asp:Label ID="testlb" runat="server" Text="Label"></asp:Label>
     <div class="row">
         <div class="col-sm-8">
             <asp:Image ID="imgEventImage" CssClass="img-fluid w-100 rounded mb-1 max-height" runat="server" Height="475px" />
@@ -75,6 +74,31 @@
     <div class="row p-3 border-bottom">
          <asp:Label ID="lbEventDescription" runat="server" Text=""></asp:Label>
     </div>
+
+    
+    <div id="groupDiv" runat="server" class="row p-3 border-bottom">
+        <div class="row p-3">
+            <asp:Label ID="lbGroupHeading" runat="server" Text="Join as a group" Font-Bold="True" Font-Size="Larger"></asp:Label>
+        </div>
+        <div class="row p-3">
+            <div class="col-4">
+                <asp:Label ID="lbGroupList" runat="server" Text="Select Group:" Font-Bold="True" Font-Size="Larger"></asp:Label>
+                <asp:DropDownList ID="ddlGroupList" CssClass="w-100" runat="server" DataSourceID="groupListSqlDataSource" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
+                <asp:SqlDataSource ID="groupListSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT * FROM [Group] WHERE ([Leader] = @Leader)">
+                    <SelectParameters>
+                        <asp:SessionParameter Name="Leader" SessionField="userId" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+            </div>
+            <div class="col-8">
+                <asp:Button ID="btnGroupJoinEvent" runat="server" CssClass="btn btn-primary" Text="Join Event as Group" OnClick="btnGroupJoinEvent_Click" />
+                <asp:Button ID="btnGroupInfoEvent" runat="server" CssClass="btn btn-info" Text="Default" />
+                <asp:Button ID="btnGroupLeaveEvent" runat="server" CssClass="btn btn-danger" Text="Leave Event as Group" />
+            </div>
+        </div>
+    </div>
+
+
     <div class="row p-3">
         <asp:Label ID="lbHeadingConfirmedAttendee" runat="server" Text="Confirmed Attendees:" Font-Bold="True" Font-Size="Larger"></asp:Label>
         <asp:Label ID="lbEventConfirmedAttendee" CssClass="pl-2" runat="server" Text="" Font-Bold="True" Font-Size="Larger"></asp:Label>

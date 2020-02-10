@@ -127,6 +127,21 @@ namespace Shimmer
             {
                 Response.Redirect("/Views/Event/events.aspx");
             }
+
+            if (!IsPostBack)
+            {
+                // need to force select command and databind again. else dropdownlist.count will be 0
+                groupListSqlDataSource.SelectCommand = "SELECT * FROM [Group] WHERE ([Leader] = @Leader)";
+                ddlGroupList.DataBind();
+            }
+            
+
+            // hide group div if not leader of group
+            if (ddlGroupList.Items.Count == 0)
+            {
+                groupDiv.Visible = false;
+            }
+
         }
 
         protected void imgbtnEventMap_Click(object sender, ImageClickEventArgs e)
@@ -184,6 +199,13 @@ namespace Shimmer
             //todo change 1 to current user
             eventobj.UserLeaveEvent(int.Parse(eventid), currentUserId);
             Response.Redirect("/Views/Event/events.aspx");
+        }
+
+        protected void btnGroupJoinEvent_Click(object sender, EventArgs e)
+        {
+            int groupId = int.Parse(ddlGroupList.SelectedValue);
+            eventobj.GroupJoinEvent(int.Parse(eventid), groupId);
+
         }
     }
 }

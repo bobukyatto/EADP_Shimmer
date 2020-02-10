@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Index.Master" AutoEventWireup="true" CodeBehind="CreateGroup.aspx.cs" Inherits="Shimmer.CreateGroup" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shimmer.Master" AutoEventWireup="true" CodeBehind="CreateGroup.aspx.cs" Inherits="Shimmer.CreateGroup" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section class="py-5">
       <div class="container">
