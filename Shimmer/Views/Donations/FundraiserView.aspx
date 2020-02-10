@@ -13,37 +13,37 @@
             <tr>
                 <td class="auto-style5">Fundraiser Name:</td>
                 <td>
-                    <asp:Label ID="lblName" runat="server"></asp:Label>
+                    <asp:Label ID="lblName" CssClass ="form-control" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Event Id:</td>
                 <td>
-                    <asp:Label ID="lblID" runat="server"></asp:Label>
+                    <asp:Label ID="lblID" CssClass ="form-control" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Organised By:</td>
                 <td>
-                    <asp:Label ID="lblOrgBy" runat="server"></asp:Label>
+                    <asp:Label ID="lblOrgBy" CssClass ="form-control" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style1">Description:</td>
                 <td class="auto-style1">
-                    <asp:Label ID="lblDesc" runat="server"></asp:Label>
+                    <asp:Label ID="lblDesc" CssClass ="form-control" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Donation Goal (SG$):</td>
                 <td>
-                    <asp:Label ID="lblDonGoal" runat="server"></asp:Label>
+                    <asp:Label ID="lblDonGoal" CssClass ="form-control" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Category:</td>
                 <td>
-                    <asp:Label ID="lblCategory" runat="server"></asp:Label>
+                    <asp:Label ID="lblCategory" CssClass ="form-control" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -53,7 +53,7 @@
             <tr>
                 <td class="auto-style5">&nbsp;</td>
                 <td>
-                    <asp:Button ID="btnDonate" runat="server" Text="Donate to this Fundraiser" OnClick="btnDonate_Click" />
+                    <asp:Button ID="btnDonate" CssClass="btn btn-primary px-3" runat="server" Text="Donate to this Fundraiser" OnClick="btnDonate_Click" />
                 </td>
             </tr>
         </table>

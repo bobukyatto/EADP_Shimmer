@@ -44,7 +44,7 @@
               <li class="nav-item dropdown"><a id="homeDropdownMenuLink" href="/Views/index.aspx" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle active">
                    
                   Home</a>
-                <div aria-labelledby="homeDropdownMenuLink" class="dropdown-menu"><a href="/Views/Event/events.aspx" class="dropdown-item">Events</a><a href="/Views/Group/GroupList.aspx" class="dropdown-item">Groups</a><a href="index-3.html" class="dropdown-item">Classes</a></div>
+                <div aria-labelledby="homeDropdownMenuLink" class="dropdown-menu"><a href="/Views/Event/events.aspx" class="dropdown-item">Events</a><a href="/Views/Group/GroupList.aspx" class="dropdown-item">Groups</a><a href="index-3.html" class="dropdown-item">Donation</a></div>
               </li>
               <!-- Megamenu-->
               <li class="nav-item dropdown position-static"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle">Template</a>
@@ -76,10 +76,16 @@
                             <li class="megamenu-list-item" id="grp4" runat="server"><a href="/Views/Group/GroupApplicationManagement.aspx" class="megamenu-list-link">Manage Application  </a></li>
                           </ul>
                         </div>
-                        <div class="col-lg-3">
+
+                          <div class="col-lg-3">
                           <!-- Megamenu list-->
-                          
+                          <h6 class="text-uppercase">Donation</h6>
+                          <ul class="megamenu-list list-unstyled">
+                            <li class="megamenu-list-item"><a href="/Views/Donations/CreateFundraiser.aspx" class="megamenu-list-link">CreateFundraiser   </a></li>
+                            
+                          </ul>
                         </div>
+                       
                         <div class="col-lg-3">
                           <!-- Megamenu list-->
                           <h6 class="text-uppercase">User</h6>
@@ -89,13 +95,8 @@
                             <li class="megamenu-list-item" id="UserProfileTemp" runat="server"><a href="/Views/User/UserProfile.aspx" class="megamenu-list-link">Profile</a></li>
 
                           </ul>
-                          <!-- Megamenu list-->
-                          <h6 class="text-uppercase">Classes</h6>
-                          <ul class="megamenu-list list-unstyled">
-                            <li class="megamenu-list-item"><a href="user-add-0.html" class="megamenu-list-link">Add new listing - 6 pages   </a></li>
-                            <li class="megamenu-list-item"><a href="user-list.html" class="megamenu-list-link">Bookings &mdash; list view   </a></li>
-                          </ul>
-                        </div>
+                            </div>
+                          
                       </div>
                       <div class="row megamenu-services d-none d-lg-flex pl-lg-5">
                         <div class="col-xl-3 col-lg-6 d-flex">
