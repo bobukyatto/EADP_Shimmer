@@ -1,14 +1,27 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shimmer.Master" AutoEventWireup="true" CodeBehind="groupevent.aspx.cs" Inherits="Shimmer.groupevent" %>
+﻿<%@ Page Title="Group Events" Language="C#" MasterPageFile="~/Shimmer.Master" AutoEventWireup="true" CodeBehind="groupevent.aspx.cs" Inherits="Shimmer.groupevent" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Label ID="lbGroupHeading" runat="server" Text="Your Groups:"></asp:Label>
-    <asp:DropDownList ID="ddlGroupList" runat="server" AutoPostBack="True" DataSourceID="groupListSqlDataSource" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
-    <asp:SqlDataSource ID="groupListSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT * FROM [Group] WHERE (Id IN (SELECT Group_1.Id FROM [Group] AS Group_1 INNER JOIN GroupMember ON Group_1.Id = GroupMember.GroupID WHERE (GroupMember.Username = @paramUserId))) ">
-        <SelectParameters>
-            <asp:SessionParameter Name="paramUserId" SessionField="userId" />
-        </SelectParameters>
-    </asp:SqlDataSource>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/Views/index.aspx">Home</a></li>
+            <li class="breadcrumb-item"><a href="/Views/Event/events.aspx">Events</a></li>
+            <li class="breadcrumb-item active">
+                <asp:Label ID="lbBreadcrumbCurrent" runat="server" Text="Your Group Events"></asp:Label>
+            </li>
+        </ol>
+    </nav>
+    <div class="row p-3 mb-2">
+        <asp:Label ID="lbGroupHeading" runat="server" Text="Your Groups:"></asp:Label>
+        <asp:DropDownList ID="ddlGroupList" runat="server" AutoPostBack="True" DataSourceID="groupListSqlDataSource" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
+        <asp:SqlDataSource ID="groupListSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT * FROM [Group] WHERE (Id IN (SELECT Group_1.Id FROM [Group] AS Group_1 INNER JOIN GroupMember ON Group_1.Id = GroupMember.GroupID WHERE (GroupMember.Username = @paramUserId))) ">
+            <SelectParameters>
+                <asp:SessionParameter Name="paramUserId" SessionField="userId" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+    </div>
+
     <ul class="nav nav-tabs nav-justified" id="eventTab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="Open-tab" data-toggle="tab" href="#Open" role="tab" aria-controls="Open" aria-selected="true">Open Events</a>

@@ -37,7 +37,7 @@ namespace Shimmer
                 eventobj = new Event().GetEventById(int.Parse(eventid));
                 if (eventobj is null || eventobj.Status != 1) // check if event obj is present with the status of 1
                 {
-                    Response.Redirect("events.aspx");
+                    Response.Redirect("/Views/Event/events.aspx");
                 }
                 lbBreadcrumbCurrent.Text = eventobj.Name;
                 lbEventName.Text = eventobj.Name;
@@ -134,8 +134,9 @@ namespace Shimmer
                 groupListSqlDataSource.SelectCommand = "SELECT * FROM [Group] WHERE ([Leader] = @Leader)";
                 ddlGroupList.DataBind();
             }
-            
 
+            btnGroupInfoEvent.Visible = false;
+            btnGroupLeaveEvent.Visible = false;
             // hide group div if not leader of group
             if (ddlGroupList.Items.Count == 0)
             {

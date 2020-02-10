@@ -13,6 +13,15 @@ namespace Shimmer {
     public partial class groupevent {
         
         /// <summary>
+        /// lbBreadcrumbCurrent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbBreadcrumbCurrent;
+        
+        /// <summary>
         /// lbGroupHeading control.
         /// </summary>
         /// <remarks>

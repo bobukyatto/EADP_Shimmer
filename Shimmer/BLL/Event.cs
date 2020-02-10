@@ -144,5 +144,12 @@ namespace Shimmer.BLL
             int result = dao.GroupJoinEvent(eventid, groupid);
             return result;
         }
+
+        public int closeEvent (int eventId)
+        {
+            EventDAO dao = new EventDAO();
+            int result = dao.closeEvent(eventId);
+            return result;
+        }
     }
 }

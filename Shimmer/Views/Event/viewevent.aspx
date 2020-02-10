@@ -5,8 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../index.aspx">Home</a></li>
-            <li class="breadcrumb-item"><a href="events.aspx">Events</a></li>
+            <li class="breadcrumb-item"><a href="/Views/index.aspx">Home</a></li>
+            <li class="breadcrumb-item"><a href="/Views/Event/events.aspx">Events</a></li>
             <li class="breadcrumb-item active">
                 <asp:Label ID="lbBreadcrumbCurrent" runat="server" Text=""></asp:Label>
             </li>
@@ -81,7 +81,7 @@
             <asp:Label ID="lbGroupHeading" runat="server" Text="Join as a group" Font-Bold="True" Font-Size="Larger"></asp:Label>
         </div>
         <div class="row p-3">
-            <div class="col-4">
+            <div class="col-6">
                 <asp:Label ID="lbGroupList" runat="server" Text="Select Group:" Font-Bold="True" Font-Size="Larger"></asp:Label>
                 <asp:DropDownList ID="ddlGroupList" CssClass="w-100" runat="server" DataSourceID="groupListSqlDataSource" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
                 <asp:SqlDataSource ID="groupListSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT * FROM [Group] WHERE ([Leader] = @Leader)">
@@ -90,8 +90,8 @@
                     </SelectParameters>
                 </asp:SqlDataSource>
             </div>
-            <div class="col-8">
-                <asp:Button ID="btnGroupJoinEvent" runat="server" CssClass="btn btn-primary" Text="Join Event as Group" OnClick="btnGroupJoinEvent_Click" />
+            <div class="col-6 my-auto">
+                <asp:Button ID="btnGroupJoinEvent" runat="server" CssClass="btn btn-primary " Text="Join Event as Group" OnClick="btnGroupJoinEvent_Click" />
                 <asp:Button ID="btnGroupInfoEvent" runat="server" CssClass="btn btn-info" Text="Default" />
                 <asp:Button ID="btnGroupLeaveEvent" runat="server" CssClass="btn btn-danger" Text="Leave Event as Group" />
             </div>
