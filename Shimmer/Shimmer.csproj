@@ -751,6 +751,10 @@
     <Content Include="Public\vendor\swiper\js\swiper.esm.js" />
     <Content Include="Public\vendor\swiper\js\swiper.js" />
     <Content Include="Public\vendor\swiper\js\swiper.min.js" />
+    <Content Include="Views\Donations\CreateFundraiser.aspx" />
+    <Content Include="Views\Donations\Donations.aspx" />
+    <Content Include="Views\Donations\FundraiserView.aspx" />
+    <Content Include="Views\Donations\ManageFundraiser.aspx" />
     <Content Include="Views\Event\addevent.aspx" />
     <Content Include="Views\Event\editevent.aspx" />
     <Content Include="Views\Event\events.aspx" />
@@ -774,9 +778,39 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Fundraiser.cs" />
+    <Compile Include="DAL\FundraiserDAO.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Views\Donations\CreateFundraiser.aspx.cs">
+      <DependentUpon>CreateFundraiser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Donations\CreateFundraiser.aspx.designer.cs">
+      <DependentUpon>CreateFundraiser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Donations\Donations.aspx.cs">
+      <DependentUpon>Donations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Donations\Donations.aspx.designer.cs">
+      <DependentUpon>Donations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Donations\FundraiserView.aspx.cs">
+      <DependentUpon>FundraiserView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Donations\FundraiserView.aspx.designer.cs">
+      <DependentUpon>FundraiserView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Donations\ManageFundraiser.aspx.cs">
+      <DependentUpon>ManageFundraiser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Donations\ManageFundraiser.aspx.designer.cs">
+      <DependentUpon>ManageFundraiser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Event\addevent.aspx.cs">
       <DependentUpon>addevent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
