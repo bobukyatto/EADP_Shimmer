@@ -31,7 +31,6 @@ namespace Shimmer.BLL
             UserType = usertype;
         }
 
-        //Define a constructor to initialize all the properties
         public Account(int id,string fullname, string email, string password, string phoneno, string usertype)
         {
             Id = id;
@@ -40,6 +39,15 @@ namespace Shimmer.BLL
             Password = password;
             Phone = phoneno;
             UserType = usertype;
+        }
+
+        //For updating User info
+        public Account(string fullname, string email, string phoneno, string password)
+        {
+            FullName = fullname;
+            Email = email;
+            Phone = phoneno;
+            Password = password;
         }
 
         public int AddAccount()
@@ -54,5 +62,31 @@ namespace Shimmer.BLL
             AccountDAO dao = new AccountDAO();
             return dao.CheckPassword(password);
         }
+
+        public List<Account> GetAllAccount()
+        {
+            AccountDAO dao = new AccountDAO();
+            return dao.SelectAll();
+        }
+
+        public Account GetAccountById(int id)
+        {
+            AccountDAO dao = new AccountDAO();
+            return dao.SelectById(id);
+        }
+
+        public int UpdateAccount(string id, string fullname, string email, string phone, string password)
+        {
+            AccountDAO dao = new AccountDAO();
+            int result = dao.UpdateAccount(id, fullname, email, phone, password);
+            //int result = dao.UpdateAccount(this);
+            return result;
+        }
+
+        //public int DeleteAccount(int? id)
+        //{
+        //    AccountDAO dao = new AccountDAO();
+        //    return dao.DeleteAccount(int id);
+        //}
     }
 }

@@ -37,7 +37,7 @@ namespace Shimmer
                 eventobj = new Event().GetEventById(int.Parse(eventid));
                 if (eventobj is null || eventobj.Status != 1) // check if event obj is present with the status of 1
                 {
-                    Response.Redirect("events.aspx");
+                    Response.Redirect("/Views/Event/events.aspx");
                 }
                 lbBreadcrumbCurrent.Text = eventobj.Name;
                 lbEventName.Text = eventobj.Name;
@@ -127,6 +127,22 @@ namespace Shimmer
             {
                 Response.Redirect("/Views/Event/events.aspx");
             }
+
+            if (!IsPostBack)
+            {
+                // need to force select command and databind again. else dropdownlist.count will be 0
+                groupListSqlDataSource.SelectCommand = "SELECT * FROM [Group] WHERE ([Leader] = @Leader)";
+                ddlGroupList.DataBind();
+            }
+
+            btnGroupInfoEvent.Visible = false;
+            btnGroupLeaveEvent.Visible = false;
+            // hide group div if not leader of group
+            if (ddlGroupList.Items.Count == 0)
+            {
+                groupDiv.Visible = false;
+            }
+
         }
 
         protected void imgbtnEventMap_Click(object sender, ImageClickEventArgs e)
@@ -184,6 +200,24 @@ namespace Shimmer
             //todo change 1 to current user
             eventobj.UserLeaveEvent(int.Parse(eventid), currentUserId);
             Response.Redirect("/Views/Event/events.aspx");
+        }
+
+        protected void btnGroupJoinEvent_Click(object sender, EventArgs e)
+        {
+            int groupId = int.Parse(ddlGroupList.SelectedValue);
+            try
+            {
+                eventobj.GroupJoinEvent(int.Parse(eventid), groupId);
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                Response.Redirect("/Views/Event/events.aspx");
+            }
+            catch (Exception) //Catch Others
+            {
+                Response.Redirect("/Views/index.aspx");
+            }
+
         }
     }
 }

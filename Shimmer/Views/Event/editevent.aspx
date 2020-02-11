@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shimmer.Master" AutoEventWireup="true" CodeBehind="editevent.aspx.cs" Inherits="Shimmer.editevent" %>
+﻿<%@ Page Title="Edit Event" Language="C#" MasterPageFile="~/Shimmer.Master" AutoEventWireup="true" CodeBehind="editevent.aspx.cs" Inherits="Shimmer.editevent" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../index.aspx">Home</a></li>
-            <li class="breadcrumb-item"><a href="events.aspx">Events</a></li>
+            <li class="breadcrumb-item"><a href="/Views/index.aspx">Home</a></li>
+            <li class="breadcrumb-item"><a href="/Views/Event/events.aspx">Events</a></li>
             <li class="breadcrumb-item active">
                 <asp:Label ID="lbBreadcrumbCurrent" runat="server" Text="Edit Event"></asp:Label>
             </li>

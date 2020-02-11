@@ -22,15 +22,6 @@ namespace Shimmer {
         protected global::System.Web.UI.WebControls.Label lbBreadcrumbCurrent;
         
         /// <summary>
-        /// testlb control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label testlb;
-        
-        /// <summary>
         /// imgEventImage control.
         /// </summary>
         /// <remarks>
@@ -155,6 +146,78 @@ namespace Shimmer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbEventDescription;
+        
+        /// <summary>
+        /// groupDiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl groupDiv;
+        
+        /// <summary>
+        /// lbGroupHeading control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbGroupHeading;
+        
+        /// <summary>
+        /// lbGroupList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbGroupList;
+        
+        /// <summary>
+        /// ddlGroupList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlGroupList;
+        
+        /// <summary>
+        /// groupListSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource groupListSqlDataSource;
+        
+        /// <summary>
+        /// btnGroupJoinEvent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGroupJoinEvent;
+        
+        /// <summary>
+        /// btnGroupInfoEvent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGroupInfoEvent;
+        
+        /// <summary>
+        /// btnGroupLeaveEvent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGroupLeaveEvent;
         
         /// <summary>
         /// lbHeadingConfirmedAttendee control.

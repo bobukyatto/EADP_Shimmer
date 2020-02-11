@@ -22,13 +22,9 @@
       <nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
         <div class="container-fluid">
           <div class="d-flex align-items-center"><a href="/Views/index.aspx" class="navbar-brand py-1"><img src="/Public/Image/ShimmerLogo.png" width="250" height="75" alt="Shimmer"></a>
-            <form action="#" id="search" class="form-inline d-none d-sm-flex">
-              <div class="input-label-absolute input-label-absolute-left input-reset input-expand ml-lg-2 ml-xl-3"> 
-                <label for="search_search" class="label-absolute"><i class="fa fa-search"></i><span class="sr-only">What are you looking for?</span></label>
-                <input id="search_search" placeholder="Search" aria-label="Search" class="form-control form-control-sm border-0 shadow-0 bg-gray-200">
-                <button type="reset" class="btn btn-reset btn-sm"><i class="fa-times fas"></i></button>
-              </div>
-            </form>
+                <a href="/Views/index.aspx" class="nav-link mr-2">Home</a>
+              <a href="/Views/Donations/donations.aspx" class="nav-link mr-2">Fundraiser</a>
+              <a href="/Views/Event/events.aspx" class="nav-link mr-2">Event</a>
           </div>
           <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
           <!-- Navbar Collapse -->
@@ -41,13 +37,9 @@
               </div>
             </form>
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown"><a id="homeDropdownMenuLink" href="/Views/index.aspx" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle active">
-                   
-                  Home</a>
-                <div aria-labelledby="homeDropdownMenuLink" class="dropdown-menu"><a href="/Views/Event/events.aspx" class="dropdown-item">Events</a><a href="/Views/Group/GroupList.aspx" class="dropdown-item">Groups</a><a href="index-3.html" class="dropdown-item">Classes</a></div>
-              </li>
+             
               <!-- Megamenu-->
-              <li class="nav-item dropdown position-static"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle">Template</a>
+              <li class="nav-item dropdown position-static"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle">More</a>
                 <div class="dropdown-menu megamenu py-lg-0">
                   <div class="row">
                     <div class="col-lg-9">
@@ -56,10 +48,12 @@
                           <!-- Megamenu list-->
                           <h6 class="text-uppercase">Events</h6>
                           <ul class="megamenu-list list-unstyled">
-                            <li class="megamenu-list-item"><a href="/Views/Event/events.aspx" class="megamenu-list-link">Events   </a></li>
-                            <li class="megamenu-list-item"><a href="/Views/Event/addevent.aspx" class="megamenu-list-link">Add Events   </a></li>
+                            <li class="megamenu-list-item"><a href="/Views/Event/events.aspx" class="megamenu-list-link">Events</a></li>
+                              <li class="megamenu-list-item"><a href="/Views/Event/userevent.aspx" class="megamenu-list-link">Joined Events</a></li>
+                              <li class="megamenu-list-item"><a href="/Views/Event/groupevent.aspx" class="megamenu-list-link">Group Events</a></li>
+                              <li class="megamenu-list-item"><a href="/Views/Event/eventmanagement.aspx" class="megamenu-list-link">Manage Events</a></li>
+                            <li class="megamenu-list-item" id="event2" runat="server"><a href="/Views/Event/addevent.aspx" class="megamenu-list-link">Add Events   </a></li>
                            
-                            <li class="megamenu-list-item"><a href="index-4.html" class="megamenu-list-link">Real estate <span class="badge badge-info-light ml-1">New</span>   </a></li>
                           </ul>
                           <!-- Megamenu list-->
                           
@@ -70,31 +64,33 @@
                           <!-- Megamenu list-->
                           <h6 class="text-uppercase">Group</h6>
                           <ul class="megamenu-list list-unstyled">
-                            <li class="megamenu-list-item"><a href="/Views/Group/GroupList.aspx" class="megamenu-list-link">Group   </a></li>
-                            <li class="megamenu-list-item"><a href="/Views/Group/CreateGroup.aspx" class="megamenu-list-link">Create Group   </a></li>
-                            <li class="megamenu-list-item"><a href="/Views/Group/MyApplication.aspx" class="megamenu-list-link">My application  </a></li>
-                            <li class="megamenu-list-item"><a href="/Views/Group/GroupApplicationManagement.aspx" class="megamenu-list-link">Manage Application  </a></li>
+                            <li class="megamenu-list-item" id="grp1" runat="server"><a href="/Views/Group/GroupList.aspx" class="megamenu-list-link">Group   </a></li>
+                            <li class="megamenu-list-item" id="grp2" runat="server"><a href="/Views/Group/CreateGroup.aspx" class="megamenu-list-link">Create Group   </a></li>
+                            <li class="megamenu-list-item" id="grp3" runat="server"><a href="/Views/Group/MyApplication.aspx" class="megamenu-list-link">My application  </a></li>
+                            <li class="megamenu-list-item" id="grp4" runat="server"><a href="/Views/Group/GroupApplicationManagement.aspx" class="megamenu-list-link">Manage Application  </a></li>
                           </ul>
                         </div>
-                        <div class="col-lg-3">
+
+                          <div class="col-lg-3">
                           <!-- Megamenu list-->
-                          
+                          <h6 class="text-uppercase">Donation</h6>
+                          <ul class="megamenu-list list-unstyled">
+                            <li class="megamenu-list-item"><a href="/Views/Donations/CreateFundraiser.aspx" class="megamenu-list-link">CreateFundraiser   </a></li>
+                            
+                          </ul>
                         </div>
+                       
                         <div class="col-lg-3">
                           <!-- Megamenu list-->
                           <h6 class="text-uppercase">User</h6>
                           <ul class="megamenu-list list-unstyled">
-                            <li class="megamenu-list-item"><a href="/Views/User/Login.aspx" class="megamenu-list-link">Sign in   </a></li>
-                            <li class="megamenu-list-item"><a href="/Views/User/Register.aspx" class="megamenu-list-link">Sign up   </a></li>
-                            
+                            <li class="megamenu-list-item" id="SignInTemp" runat="server"><a href="/Views/User/Login.aspx" class="megamenu-list-link">Sign in   </a></li>
+                            <li class="megamenu-list-item" id="SignUpTemp" runat="server"><a href="/Views/User/Register.aspx" class="megamenu-list-link">Sign up   </a></li>
+                            <li class="megamenu-list-item" id="UserProfileTemp" runat="server"><a href="/Views/User/UserProfile.aspx" class="megamenu-list-link">Profile</a></li>
+
                           </ul>
-                          <!-- Megamenu list-->
-                          <h6 class="text-uppercase">Classes</h6>
-                          <ul class="megamenu-list list-unstyled">
-                            <li class="megamenu-list-item"><a href="user-add-0.html" class="megamenu-list-link">Add new listing - 6 pages   </a></li>
-                            <li class="megamenu-list-item"><a href="user-list.html" class="megamenu-list-link">Bookings &mdash; list view   </a></li>
-                          </ul>
-                        </div>
+                            </div>
+                          
                       </div>
                       <div class="row megamenu-services d-none d-lg-flex pl-lg-5">
                         <div class="col-xl-3 col-lg-6 d-flex">
@@ -143,14 +139,20 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-3 d-none d-lg-block"><img src="img/photo/photo-1521170665346-3f21e2291d8b.jpg" alt="" class="bg-image"></div>
+                    <div class="col-lg-3 d-none d-lg-block"><img src="/Public/Image/insp.jpg" alt="" class="bg-image"></div>
                   </div>
                 </div>
               </li>
               <!-- /Megamenu end-->
-              <li class="nav-item"><a href="/Views/User/Login.aspx" class="nav-link">Sign in</a></li>
+              <li class="nav-item" id ="UserTable" runat="server"><a href="/Views/Admin/UserTable.aspx" class="nav-link">User Table</a></li>
+
+              <li class="nav-item" id="SignIn" runat="server"><a href="/Views/User/Login.aspx" class="nav-link">Sign in</a></li>
               
-              <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block"><a href="/Views/User/Register.aspx" class="btn btn-primary">Sign Up</a></li>
+              <li class="nav-item mt-3 mt-lg-0 ml-lg-3 d-lg-none d-xl-inline-block" id="Register" runat="server"><a href="/Views/User/Register.aspx" class="btn btn-primary">Sign Up</a></li>
+
+              <li class="nav-item" id="UserProfile" runat="server"><a href="/Views/User/UserProfile.aspx" class="nav-link">Profile</a></li>
+
+              <li class="nav-item" id="Logout" runat="server" ><a href="/Views/LogOut.aspx" class="nav-link">Log Out</a></li>
             </ul>
           </div>
         </div>

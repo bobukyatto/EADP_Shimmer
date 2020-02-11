@@ -25,7 +25,7 @@
         </asp:Repeater>
 
 
-        <asp:GridView ID="GvDonation" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GvDonation_SelectedIndexChanged">
+        <asp:GridView ID="GvDonation"  runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GvDonation_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
                 <asp:BoundField DataField="organisedBy" HeaderText="Organised By" />
