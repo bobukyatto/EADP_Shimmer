@@ -19,7 +19,7 @@ namespace Shimmer.DAL
             SqlConnection myConn = new SqlConnection(DBConnect);
 
             //Step 2 -  Create a DataAdapter to retrieve data from the database table
-            string sqlStmt = "Select * from Donations";
+            string sqlStmt = "Select * from AllDonations";
             SqlDataAdapter da = new SqlDataAdapter(sqlStmt, myConn);
             //Step 3 -  Create a DataSet to store the data to be retrieved
             DataSet ds = new DataSet();
@@ -52,7 +52,7 @@ namespace Shimmer.DAL
             SqlConnection myConn = new SqlConnection(DBConnect);
 
             int result = 0;
-            string sqlstmt = "Insert into Donations(donationBy, donationTo, amount, creditType, fundraiserId) Values(@paraDNBy, @paraDNTo, @paraAmt, @paraCredType, @paraFRId)";
+            string sqlstmt = "Insert into AllDonations(donationBy, donationTo, amount, creditType, fundraiserId) Values(@paraDNBy, @paraDNTo, @paraAmt, @paraCredType, @paraFRId)";
             SqlCommand sqlCmd = new SqlCommand(sqlstmt, myConn);
 
             sqlCmd.Parameters.AddWithValue("@paraDNBy", DN.donationBy);
