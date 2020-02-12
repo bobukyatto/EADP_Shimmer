@@ -32,7 +32,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:Label ID="Label4" CssClass ="form-control-plaintext" runat="server" Text="Donation Goal"></asp:Label>
+                    <asp:Label ID="Label4" CssClass ="form-control-plaintext" runat="server" Text="Donation Goal (SG$)"></asp:Label>
                 </td>
                 <td>
                     <asp:TextBox ID="TB_DGoal" CssClass ="form-control" runat="server"></asp:TextBox>
