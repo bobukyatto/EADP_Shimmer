@@ -35,7 +35,7 @@ namespace Shimmer
             if (eventid != null)
             {
                 eventobj = new Event().GetEventById(int.Parse(eventid));
-                if (eventobj is null || eventobj.Status != 1) // check if event obj is present with the status of 1
+                if (eventobj is null || eventobj.Status < 0) // check if event obj is present with the status of 1
                 {
                     Response.Redirect("/Views/Event/events.aspx");
                 }
@@ -142,7 +142,19 @@ namespace Shimmer
             {
                 groupDiv.Visible = false;
             }
+            checkEventClosed();
+        }
 
+        protected void checkEventClosed()
+        {
+            if (eventobj.Status == 0)
+            {
+                groupDiv.Visible = false;
+                btnJoinEvent.Visible = false;
+                btnInfoEvent.Visible = true;
+                btnInfoEvent.CssClass = "btn btn-info btn-lg btn-block";
+                btnInfoEvent.Text = "Event Closed";
+            }
         }
 
         protected void imgbtnEventMap_Click(object sender, ImageClickEventArgs e)

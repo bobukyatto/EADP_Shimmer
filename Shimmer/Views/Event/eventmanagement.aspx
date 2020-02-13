@@ -47,7 +47,7 @@
                         <div class="col-4 text-center my-auto">
                             <a href="editevent.aspx?eventid=<%# Eval("Id") %>" class="btn btn-success mb-1 btn-block">Edit Event</a>
                             <a href="viewevent.aspx?eventid=<%# Eval("Id") %>" class="btn btn-info  mb-1 btn-block">Event information</a>
-                            <asp:Button ID="btnCloseEvent" runat="server" CssClass="btn btn-danger  mb-1 btn-block" Text="Close Event" CommandArgument='<%# Eval("Id") %>' OnCommand="btnCloseEvent_Click"  />
+                            <asp:Button ID="btnCloseEvent" runat="server" CssClass="btn btn-danger  mb-1 btn-block" Text="Close Event" CommandArgument='<%# Eval("Id") %>' CommandName="closeEventBtn" OnCommand="btnCloseEvent_Click"  />
                         </div>
                     </div>
                 </ItemTemplate>

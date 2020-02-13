@@ -15,11 +15,13 @@ namespace Shimmer
         {
             eventobj = new Event();
         }
+        
 
         protected void btnCloseEvent_Click(Object sender, CommandEventArgs e)
         {
-            int ID = int.Parse(e.CommandArgument.ToString());
-            eventobj.closeEvent(ID);
+            int eventId = int.Parse(e.CommandArgument.ToString());
+            eventobj.closeEvent(eventId);
+
 
         }
     }

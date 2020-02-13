@@ -16,6 +16,7 @@ namespace Shimmer
                 UserTable.Visible = false;
                 Logout.Visible = false;
                 UserProfile.Visible = false;
+                
 
                 //To hide Group in templete
                 grp1.Visible = false;
