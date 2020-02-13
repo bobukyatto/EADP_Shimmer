@@ -13,6 +13,10 @@ namespace Shimmer
         Group group = new Group();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["userId"] is null)
+            {
+                Response.Redirect("/Views/User/Login.aspx");
+            }
             Group group = new Group();
             if (Request.QueryString["id"] != null)
             {
