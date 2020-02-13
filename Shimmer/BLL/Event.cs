@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Shimmer.DAL;
+using Shimmer.BLL;
 
 namespace Shimmer.BLL
 {
@@ -150,6 +151,12 @@ namespace Shimmer.BLL
             EventDAO dao = new EventDAO();
             int result = dao.closeEvent(eventId);
             return result;
+        }
+
+        public Account getEventOwner()
+        {
+            Account ownerAccountObject = new Account().GetAccountById(this.OrganizedBy);
+            return ownerAccountObject;
         }
     }
 }

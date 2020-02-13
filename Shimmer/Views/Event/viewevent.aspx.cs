@@ -43,7 +43,7 @@ namespace Shimmer
                 lbEventName.Text = eventobj.Name;
                 lbEventDescription.Text = eventobj.Description;
                 //lbEventMinAttendee.Text = (eventobj.MinimumAttendee).ToString();
-                lbEventOrganizedBy.Text = (eventobj.OrganizedBy).ToString();
+                lbEventOrganizedBy.Text = eventobj.getEventOwner().FullName.ToString();
                 lbEventDate.Text = Convert.ToDateTime(eventobj.StartDateTime).ToString("dddd, dd MMMM yyyy");
                 lbEventTime.Text = Convert.ToDateTime(eventobj.StartDateTime).ToString("hh:mm tt");
 
@@ -101,6 +101,8 @@ namespace Shimmer
                             if (eventAssociationList[i].Status == "Accepted")
                             {
                                 btnInfoEvent.CssClass = "btn btn-success btn-lg btn-block";
+                                //Close join as group if accepted into event already.
+                                groupDiv.Visible = false;
                             }
                             else
                             {
@@ -112,7 +114,7 @@ namespace Shimmer
                         else if (eventAssociationList[i].UserId == currentUserId && eventAssociationList[i].Status =="Pending")// todo change this to current user .done
                         {
                             btnJoinEvent.Visible = false;
-                            btnLeaveEvent.Visible = true;
+                            btnLeaveEvent.Visible = true; 
                         }
                     }
                     

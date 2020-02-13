@@ -59,6 +59,7 @@ namespace Shimmer
                     Session["email"] = TbEmailLogin.Text;
                     Session["userId"] = checkacctobj.Id;
                     Session["userType"] = checkacctobj.UserType;
+                    Session["userFullName"] = checkacctobj.FullName;
                     if (Session["userType"].ToString() == "Admin")
                     {
                         Response.Redirect("/Views/Admin/UserTable.aspx");

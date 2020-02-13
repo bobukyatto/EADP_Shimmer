@@ -13,8 +13,8 @@
         </ol>
     </nav>
     <div class="row p-3 mb-2">
-        <asp:Label ID="lbGroupHeading" runat="server" Text="Your Groups:"></asp:Label>
-        <asp:DropDownList ID="ddlGroupList" runat="server" AutoPostBack="True" DataSourceID="groupListSqlDataSource" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
+        <asp:Label ID="lbGroupHeading" runat="server" CssClass="col-2" Text="Your Groups:"></asp:Label>
+        <asp:DropDownList ID="ddlGroupList" CssClass="col-3 form-control" runat="server" AutoPostBack="True" DataSourceID="groupListSqlDataSource" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
         <asp:SqlDataSource ID="groupListSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT * FROM [Group] WHERE (Id IN (SELECT Group_1.Id FROM [Group] AS Group_1 INNER JOIN GroupMember ON Group_1.Id = GroupMember.GroupID WHERE (GroupMember.Username = @paramUserId))) ">
             <SelectParameters>
                 <asp:SessionParameter Name="paramUserId" SessionField="userId" />

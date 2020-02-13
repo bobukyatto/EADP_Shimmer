@@ -40,6 +40,8 @@
             <ul class="navbar-nav ml-auto">
              
               <!-- Megamenu-->
+                <li class="nav-item" id="Li1" runat="server"><asp:Label CssClass="nav-link" ID="lbWelcomeUser" runat="server" Text=""></asp:Label></li>
+               
               <li class="nav-item dropdown position-static"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle">More</a>
                 <div class="dropdown-menu megamenu py-lg-0">
                   <div class="row">

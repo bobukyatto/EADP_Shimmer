@@ -19,12 +19,12 @@
         <asp:Label ID="lbEmpty" runat="server" CssClass="mx-auto" Text=""></asp:Label>
 
         <asp:Label ID="lbSortBy" runat="server" CssClass="float-right pr-1" Text="Sort By:"></asp:Label>
-        <asp:DropDownList ID="ddlSort" CssClass="float-right" runat="server" OnSelectedIndexChanged="ddlSort_SelectedIndexChanged" AutoPostBack="True">
-            <asp:ListItem Selected="True">Recent (Open)</asp:ListItem>
-            <asp:ListItem>Past (Closed)</asp:ListItem>
+        <asp:DropDownList ID="ddlSort" CssClass="float-right col-2 form-control" runat="server" OnSelectedIndexChanged="ddlSort_SelectedIndexChanged" AutoPostBack="True">
+            <asp:ListItem Selected="True">Recent</asp:ListItem>
             <asp:ListItem>Upcoming</asp:ListItem>
             <asp:ListItem>Duration (Short)</asp:ListItem>
             <asp:ListItem>Duration (Long)</asp:ListItem>
+            <asp:ListItem>Ended</asp:ListItem>
         </asp:DropDownList>
     </div>
 
@@ -36,7 +36,7 @@
                         <img src="/Public/Image/Uploads/<%# Eval("eventImage") %>" class="card-img-top" alt="..." height="250">
                         <div class="card-body text-center bg-gray-100 shadow ">
                             <asp:Label ID="lbEventName" runat="server" Text='<%# Eval("eventName") %>' Font-Bold="True"></asp:Label>
-                            <p class="card-text"><small class="text-muted">By <%# Eval("eventOrganizedBy") %></small></p>
+                            <p class="card-text"><small class="text-muted">By <%# Eval("fullName") %></small></p>
                             <i class="far fa-calendar">
                                 <asp:Label ID="lbEventDate" runat="server" Text='<%# string.Format("{0:dd/MM/yyyy }", Eval("eventStartDateTime"))%>'></asp:Label></i><br />
                             <i class="far fa-clock">
@@ -53,7 +53,7 @@
             </ItemTemplate>
         </asp:Repeater>
     </div>
-    <asp:SqlDataSource ID="eventDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT * FROM [Event] WHERE ([eventStatus] = @eventStatus) ORDER BY Id DESC">
+    <asp:SqlDataSource ID="eventDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT * FROM Event INNER JOIN Account ON Event.eventOrganizedBy = Account.Id WHERE (Event.eventStatus = @eventStatus) ORDER BY Event.Id DESC">
         <SelectParameters>
             <asp:Parameter DefaultValue="1" Name="eventStatus" Type="Int32" />
         </SelectParameters>
