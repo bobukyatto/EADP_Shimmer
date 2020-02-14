@@ -29,10 +29,6 @@ namespace Shimmer
             {
                 lblMsgLogin.Text += "Please input password!" + "<br/>";
             }
-            //if (TbPassLogin.Text == Account.checkPassword(TbEmailLogin.Text))
-            //{
-
-            //}
             if (String.IsNullOrEmpty(lblMsgLogin.Text))
             {
                 result = true;

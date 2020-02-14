@@ -28,22 +28,17 @@
                 <asp:TextBox ID="UpdatePhone" CssClass="form-control" runat="server"></asp:TextBox>
             </td>
         </tr>
-         <%--<tr>
-            <td class="auto-style1">Current Password:</td>
-            <td>
-                <asp:TextBox ID="CurrPass" CssClass="form-control" runat="server"></asp:TextBox>
-            </td>
-        </tr>--%>
+        
         <tr>
             <td class="auto-style1">New Password:</td>
             <td>
-                <asp:TextBox ID="UpdatePass" CssClass="form-control" runat="server"></asp:TextBox>
+                <asp:TextBox ID="UpdatePass" CssClass="form-control" TextMode="Password" runat="server"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td class="auto-style1">Re-enter Password:</td>
             <td>
-                <asp:TextBox ID="rePass" CssClass="form-control" runat="server"></asp:TextBox>
+                <asp:TextBox ID="rePass" CssClass="form-control" TextMode="Password" runat="server"></asp:TextBox>
             </td>
         </tr>
          <tr>

@@ -83,10 +83,6 @@ namespace Shimmer.BLL
             return result;
         }
 
-        //public int DeleteAccount(int? id)
-        //{
-        //    AccountDAO dao = new AccountDAO();
-        //    return dao.DeleteAccount(int id);
-        //}
+        
     }
 }

@@ -161,10 +161,7 @@ namespace Shimmer.DAL
 
                 acc = new Account(id, fullname, eemail, password, phone, usertype);
             }
-            //else
-            //{
-            //    acc = null;
-            //}
+           
 
             return acc;
         }
@@ -200,30 +197,7 @@ namespace Shimmer.DAL
             return result;
         }
 
-        //public Account DeleteAccount(int id)
-        //{
-        //    int result = 0;
-        //    SqlCommand sqlCmd = new SqlCommand();
-
-        //    string DBConnect = ConfigurationManager.ConnectionStrings["ShimmerConnectionString"].ConnectionString;
-        //    SqlConnection myConn = new SqlConnection(DBConnect);
-
-        //    string sqlStmt = "DELETE FROM dbo.[Account] where id = @paraId";
-        //    sqlCmd = new SqlCommand(sqlStmt, myConn);
-
-        //    sqlCmd.Parameters.AddWithValue("@paraId", id);
-
-
-
-        //    // Step 4 Open connection the execute NonQuery of sql command   
-        //    myConn.Open();
-        //    result = sqlCmd.ExecuteNonQuery();
-
-        //    // Step 5 :Close connection
-        //    myConn.Close();
-
-        //    return result;
-        //}
+       
 
     }
 }

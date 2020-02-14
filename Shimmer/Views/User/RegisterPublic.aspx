@@ -14,8 +14,8 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
-            Individual</div>
+    <h1>
+            Individual</h1>
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2">Full Name:</td>
@@ -32,13 +32,13 @@
             <tr>
                 <td class="auto-style2">Password:</td>
                 <td>
-                    <asp:TextBox ID="TbPassword" CssClass="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TbPassword" CssClass="form-control" TextMode="Password" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Re-enter Password:</td>
                 <td>
-                    <asp:TextBox ID="TbRePass" CssClass="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TbRePass" CssClass="form-control" TextMode="Password" runat="server"></asp:TextBox>
                 </td>
             </tr>
             
