@@ -18,7 +18,7 @@
         <asp:Label ID="lbHeading" runat="server" Text="Current events" Font-Bold="True" Font-Size="Larger"></asp:Label>
         <asp:Label ID="lbEmpty" runat="server" CssClass="mx-auto" Text=""></asp:Label>
 
-        <asp:Label ID="lbSortBy" runat="server" CssClass="float-right pr-1" Text="Sort By:"></asp:Label>
+        <asp:Label ID="lbSortBy" runat="server" CssClass="float-right pr-2 pt-2" Text="Sort By:"></asp:Label>
         <asp:DropDownList ID="ddlSort" CssClass="float-right col-2 form-control" runat="server" OnSelectedIndexChanged="ddlSort_SelectedIndexChanged" AutoPostBack="True">
             <asp:ListItem Selected="True">Recent</asp:ListItem>
             <asp:ListItem>Upcoming</asp:ListItem>

@@ -42,6 +42,9 @@ namespace Shimmer
                 lbBreadcrumbCurrent.Text = eventobj.Name;
                 lbEventName.Text = eventobj.Name;
                 lbEventDescription.Text = eventobj.Description;
+                lbEventContactName.Text = eventobj.ContactName;
+                lbEventContactNumber.Text = eventobj.ContactNumber;
+                lbEventContactEmail.Text = eventobj.ContactEmail;
                 //lbEventMinAttendee.Text = (eventobj.MinimumAttendee).ToString();
                 lbEventOrganizedBy.Text = eventobj.getEventOwner().FullName.ToString();
                 lbEventDate.Text = Convert.ToDateTime(eventobj.StartDateTime).ToString("dddd, dd MMMM yyyy");

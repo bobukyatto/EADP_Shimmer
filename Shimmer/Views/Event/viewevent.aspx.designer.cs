@@ -148,6 +148,69 @@ namespace Shimmer {
         protected global::System.Web.UI.WebControls.Label lbEventDescription;
         
         /// <summary>
+        /// lbHeadingContact control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbHeadingContact;
+        
+        /// <summary>
+        /// lbHeadingContactName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbHeadingContactName;
+        
+        /// <summary>
+        /// lbEventContactName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbEventContactName;
+        
+        /// <summary>
+        /// lbHeadingContactNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbHeadingContactNumber;
+        
+        /// <summary>
+        /// lbEventContactNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbEventContactNumber;
+        
+        /// <summary>
+        /// lbHeadingContactEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbHeadingContactEmail;
+        
+        /// <summary>
+        /// lbEventContactEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbEventContactEmail;
+        
+        /// <summary>
         /// groupDiv control.
         /// </summary>
         /// <remarks>

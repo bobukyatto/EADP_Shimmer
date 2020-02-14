@@ -62,11 +62,11 @@
             <asp:TextBox ID="tbEventTime" runat="server" CssClass="form-control" TextMode="Time"></asp:TextBox>
         </div>
         <div class="col-sm-2 pb-3">
-            <asp:Label ID="lbEventDurationHours" runat="server" Text="Event Duration (Hours)"></asp:Label>
+            <asp:Label ID="lbEventDurationHours" runat="server" Text="Event Duration(Hours)"></asp:Label>
             <asp:TextBox ID="tbEventDurationHours" runat="server" CssClass="form-control" placeholder="01 Hours"></asp:TextBox>
         </div>
         <div class="col-sm-2 pb-3">
-            <asp:Label ID="lbEventDurationMinutes" runat="server" Text="Event Duration (Minutes)"></asp:Label>
+            <asp:Label ID="lbEventDurationMinutes" runat="server" Text="Event Duration(Minutes)"></asp:Label>
             <asp:TextBox ID="tbEventDurationMinutes" runat="server" CssClass="form-control" placeholder="00 Minutes"></asp:TextBox>
         </div>
 
