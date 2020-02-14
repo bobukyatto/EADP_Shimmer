@@ -1,8 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shimmer.Master" AutoEventWireup="true" CodeBehind="userevent.aspx.cs" Inherits="Shimmer.userevent" %>
+﻿<%@ Page Title="Your Events" Language="C#" MasterPageFile="~/Shimmer.Master" AutoEventWireup="true" CodeBehind="userevent.aspx.cs" Inherits="Shimmer.userevent" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/Views/index.aspx">Home</a></li>
+            <li class="breadcrumb-item"><a href="/Views/Event/events.aspx">Events</a></li>
+            <li class="breadcrumb-item active">
+                <asp:Label ID="lbBreadcrumbCurrent" runat="server" Text="Your Events"></asp:Label>
+            </li>
+        </ol>
+    </nav>
     <ul class="nav nav-tabs nav-justified" id="eventTab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="Open-tab" data-toggle="tab" href="#Open" role="tab" aria-controls="Open" aria-selected="true">Open Events</a>

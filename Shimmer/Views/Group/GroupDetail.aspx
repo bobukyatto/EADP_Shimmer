@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="Index.Master" AutoEventWireup="true" CodeBehind="GroupDetail.aspx.cs" Inherits="Shimmer.GroupDetail" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shimmer.Master" AutoEventWireup="true" CodeBehind="GroupDetail.aspx.cs" Inherits="Shimmer.GroupDetail" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container py-5">
@@ -83,9 +83,9 @@
                 <ItemTemplate>
                     <div class="swiper-slide h-auto px-2">
               <!-- place item-->
-              <div class="w-100 h-100 hover-animate" style="max-height:360px">
+              <div class="w-100 h-100 hover-animate" style="max-height:360px; max-width:360px">
                 <div class="card h-100 border-0 shadow">
-                  <div class="card-img-top overflow-hidden gradient-overlay" style="max-height:250px"> <img src='<%# getGroupImg(Eval("Image").ToString()) %>'  class="img-fluid"/>
+                  <div class="card-img-top overflow-hidden gradient-overlay" style="max-height:250px" "> <img src='<%# getGroupImg(Eval("Image").ToString()) %>'  class="img-fluid"/>
                     <div class="card-img-overlay-bottom z-index-20">
                       <div class="media text-white text-sm align-items-center"><img src='<%# getLeaderImg(Convert.ToInt32(Eval("Leader"))) %>' class="avatar avatar-border-white mr-2"/>
                         <div class="media-body"><%# getLeaderName(Convert.ToInt32(Eval("Leader"))) %></div>

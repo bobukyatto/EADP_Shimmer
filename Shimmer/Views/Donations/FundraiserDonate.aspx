@@ -8,37 +8,37 @@
             <tr>
                 <td class="auto-style2">Fundraiser Name:</td>
                 <td>
-                    <asp:Label ID="lblFdrName" runat="server"></asp:Label>
+                    <asp:Label ID="lblFdrName" CssClass ="form-control-plaintext" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Organised By:</td>
                 <td>
-                    <asp:Label ID="lblOrgBy" runat="server"></asp:Label>
+                    <asp:Label ID="lblOrgBy" CssClass ="form-control-plaintext" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style5">Fundraiser Id:</td>
                 <td>
-                    <asp:Label ID="lblID" runat="server"></asp:Label>
+                    <asp:Label ID="lblID" CssClass ="form-control-plaintext" runat="server"></asp:Label>
                 </td>
             </tr>            
             <tr>
                 <td class="auto-style3">Description:</td>
                 <td class="auto-style4">
-                    <asp:Label ID="lblDesc" runat="server"></asp:Label>
+                    <asp:Label ID="lblDesc" CssClass ="form-control-plaintext" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style3">Donation Goal:</td>
                 <td class="auto-style4">
-                    <asp:Label ID="lblDonGoal" runat="server"></asp:Label>
+                    <asp:Label ID="lblDonGoal" CssClass ="form-control-plaintext" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Category:</td>
                 <td>
-                    <asp:Label ID="lblCategory" runat="server"></asp:Label>
+                    <asp:Label ID="lblCategory" CssClass ="form-control-plaintext" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -52,19 +52,19 @@
             <tr>
                 <td class="auto-style2">Donation By:</td>
                 <td>
-                    <asp:Label ID="lblUserId" runat="server">UserId</asp:Label>
+                    <asp:Label ID="lblUserId" CssClass ="form-control-plaintext" runat="server">UserId</asp:Label>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Donation Amount (SG$):</td>
                 <td>
-                    <asp:TextBox ID="tbDonAmt" runat="server" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="tbDonAmt" CssClass ="form-control" runat="server" TextMode="Number"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Credit Type:</td>
                 <td>
-                    <asp:DropDownList ID="ddlCreditType" runat="server">
+                    <asp:DropDownList ID="ddlCreditType" CssClass="dropdown" runat="server">
                         <asp:ListItem Value="-1">--Select Type--</asp:ListItem>
                         <asp:ListItem Value="1">MasterCard</asp:ListItem>
                         <asp:ListItem Value="2">Visa</asp:ListItem>
@@ -79,7 +79,7 @@
             <tr>
                 <td class="auto-style2">&nbsp;</td>
                 <td>
-                    <asp:Button ID="btnDonate" runat="server" OnClick="btnDonate_Click" Text="Submit" />
+                    <asp:Button ID="btnDonate" CssClass="btn btn-primary px-2" runat="server" OnClick="btnDonate_Click" Text="Submit" />
                 </td>
             </tr>
         </table>
@@ -87,7 +87,7 @@
         <br />
         <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
         <br />
-        <asp:Button ID="btnReturn" runat="server" OnClick="btnReturn_Click" Text="Return to Donation Page" />
+        <asp:Button ID="btnReturn" CssClass="btn btn-primary px-3" runat="server" OnClick="btnReturn_Click" Text="Return to Donation Page" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>

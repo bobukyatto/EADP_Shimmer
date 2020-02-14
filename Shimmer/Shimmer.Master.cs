@@ -13,9 +13,11 @@ namespace Shimmer
         {
             if (Session["userType"] == null)
             {
+                lbWelcomeUser.Visible = false;
                 UserTable.Visible = false;
                 Logout.Visible = false;
                 UserProfile.Visible = false;
+                
 
                 //To hide Group in templete
                 grp1.Visible = false;
@@ -33,6 +35,7 @@ namespace Shimmer
             }
             else
             {
+                lbWelcomeUser.Text = "Welcome Back - " + Session["userFullName"].ToString();
                 if (Session["userType"].ToString() == "Admin")
                 {
                     UserTable.Visible = true;

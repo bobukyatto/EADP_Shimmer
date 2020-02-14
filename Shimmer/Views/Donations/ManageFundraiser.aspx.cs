@@ -54,7 +54,7 @@ namespace Shimmer.Views.Donations
             try
             {
                 Fundraiser newFR = new Fundraiser();
-                int result = newFR.deleteForFundraiser(Session["SSId"].ToString());
+                int result = newFR.deleteForFundraiser(Session["DonationId"].ToString());
                 lblSuccess.Text = "Fundraiser has been deleted successfully";
                 btnReturn.Visible = false;
                 Response.Redirect("Donations.aspx");

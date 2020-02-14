@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Shimmer.Master" AutoEventWireup="true" CodeBehind="addevent.aspx.cs" Inherits="Shimmer.addevent" %>
+﻿<%@ Page Title="Create Event" Language="C#" MasterPageFile="~/Shimmer.Master" AutoEventWireup="true" CodeBehind="addevent.aspx.cs" Inherits="Shimmer.addevent" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../index.aspx">Home</a></li>
-            <li class="breadcrumb-item"><a href="events.aspx">Events</a></li>
+            <li class="breadcrumb-item"><a href="/Views/index.aspx">Home</a></li>
+            <li class="breadcrumb-item"><a href="/Views/Event/events.aspx">Events</a></li>
             <li class="breadcrumb-item active">
                 <asp:Label ID="lbBreadcrumbCurrent" runat="server" Text="Create Event"></asp:Label>
             </li>
@@ -62,11 +62,11 @@
             <asp:TextBox ID="tbEventTime" runat="server" CssClass="form-control" TextMode="Time"></asp:TextBox>
         </div>
         <div class="col-sm-2 pb-3">
-            <asp:Label ID="lbEventDurationHours" runat="server" Text="Event Duration (Hours)"></asp:Label>
+            <asp:Label ID="lbEventDurationHours" runat="server" Text="Event Duration(Hours)"></asp:Label>
             <asp:TextBox ID="tbEventDurationHours" runat="server" CssClass="form-control" placeholder="01 Hours"></asp:TextBox>
         </div>
         <div class="col-sm-2 pb-3">
-            <asp:Label ID="lbEventDurationMinutes" runat="server" Text="Event Duration (Minutes)"></asp:Label>
+            <asp:Label ID="lbEventDurationMinutes" runat="server" Text="Event Duration(Minutes)"></asp:Label>
             <asp:TextBox ID="tbEventDurationMinutes" runat="server" CssClass="form-control" placeholder="00 Minutes"></asp:TextBox>
         </div>
 

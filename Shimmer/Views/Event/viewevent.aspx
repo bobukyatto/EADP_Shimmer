@@ -5,14 +5,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../index.aspx">Home</a></li>
-            <li class="breadcrumb-item"><a href="events.aspx">Events</a></li>
+            <li class="breadcrumb-item"><a href="/Views/index.aspx">Home</a></li>
+            <li class="breadcrumb-item"><a href="/Views/Event/events.aspx">Events</a></li>
             <li class="breadcrumb-item active">
                 <asp:Label ID="lbBreadcrumbCurrent" runat="server" Text=""></asp:Label>
             </li>
         </ol>
     </nav>
-    <asp:Label ID="testlb" runat="server" Text="Label"></asp:Label>
     <div class="row">
         <div class="col-sm-8">
             <asp:Image ID="imgEventImage" CssClass="img-fluid w-100 rounded mb-1 max-height" runat="server" Height="475px" />
@@ -20,9 +19,11 @@
         <div class="col">
             <div class="row pb-4">
                 <div class="col-12">
-                    <h3><asp:Label ID="lbEventName" runat="server" Text="" Font-Bold="True"></asp:Label><br /></h3>
+                    <h3>
+                        <asp:Label ID="lbEventName" runat="server" Text="" Font-Bold="True"></asp:Label><br />
+                    </h3>
                 </div>
-                <div class="col-12 ml-4">
+                <div class="col-12 ml-3">
                     <asp:Label ID="lbHeadingOrganizedBy" runat="server" Text="Organized By: "></asp:Label>
                     <asp:Label ID="lbEventOrganizedBy" runat="server" Text=""></asp:Label>
                 </div>
@@ -64,8 +65,8 @@
             </div>
             <div class="row text-center pr-3">
                 <asp:Button ID="btnJoinEvent" runat="server" CssClass="btn btn-primary btn-lg btn-block" Text="Join Event" OnClick="btnJoinEvent_Click" />
-                <asp:Button ID="btnInfoEvent" runat="server" Text="Default" disabled/>
-                <asp:Button ID="btnLeaveEvent" runat="server" CssClass="btn btn-danger btn-lg btn-block" Text="Leave Event" OnClick="btnLeaveEvent_Click"  />
+                <asp:Button ID="btnInfoEvent" runat="server" Text="Default" disabled />
+                <asp:Button ID="btnLeaveEvent" runat="server" CssClass="btn btn-danger btn-lg btn-block" Text="Leave Event" OnClick="btnLeaveEvent_Click" />
             </div>
         </div>
     </div>
@@ -73,8 +74,53 @@
         <asp:Label ID="lbHeadingDescription" runat="server" Text="About the event" Font-Bold="True" Font-Size="Larger"></asp:Label>
     </div>
     <div class="row p-3 border-bottom">
-         <asp:Label ID="lbEventDescription" runat="server" Text=""></asp:Label>
+        <asp:Label ID="lbEventDescription" runat="server" Text=""></asp:Label>
     </div>
+
+    <div class="row p-3">
+        <asp:Label ID="lbHeadingContact" runat="server" Text="Contact Information" Font-Bold="True" Font-Size="Larger"></asp:Label>
+
+    </div>
+    <div class="row p-3 border-bottom">
+        <div class="col-4">
+            <asp:Label ID="lbHeadingContactName" runat="server" Text="Name:" CssClass="mr-1"></asp:Label>
+            <asp:Label ID="lbEventContactName" runat="server" Text=""></asp:Label>
+        </div>
+        <div class="col-4">
+            <asp:Label ID="lbHeadingContactNumber" runat="server" Text="Phone:" CssClass="mr-1"></asp:Label>
+            <asp:Label ID="lbEventContactNumber" runat="server" Text=""></asp:Label>
+        </div>
+        <div class="col-4">
+            <asp:Label ID="lbHeadingContactEmail" runat="server" Text="Email:" CssClass="mr-1"></asp:Label>
+            <asp:Label ID="lbEventContactEmail" runat="server" Text=""></asp:Label>
+        </div>
+                
+    </div>
+
+
+    <div id="groupDiv" runat="server" class="row p-3 border-bottom">
+        <div class="row p-3">
+            <asp:Label ID="lbGroupHeading" runat="server" Text="Join as a group" Font-Bold="True" Font-Size="Larger"></asp:Label>
+        </div>
+        <div class="row p-3">
+            <div class="col-6">
+                <asp:Label ID="lbGroupList" runat="server" Text="Select Group:" Font-Bold="True" Font-Size="Larger"></asp:Label>
+                <asp:DropDownList ID="ddlGroupList" CssClass="w-100" runat="server" DataSourceID="groupListSqlDataSource" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
+                <asp:SqlDataSource ID="groupListSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT * FROM [Group] WHERE ([Leader] = @Leader)">
+                    <SelectParameters>
+                        <asp:SessionParameter Name="Leader" SessionField="userId" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+            </div>
+            <div class="col-6 my-auto">
+                <asp:Button ID="btnGroupJoinEvent" runat="server" CssClass="btn btn-primary " Text="Join Event as Group" OnClick="btnGroupJoinEvent_Click" />
+                <asp:Button ID="btnGroupInfoEvent" runat="server" CssClass="btn btn-info" Text="Default" />
+                <asp:Button ID="btnGroupLeaveEvent" runat="server" CssClass="btn btn-danger" Text="Leave Event as Group" />
+            </div>
+        </div>
+    </div>
+
+
     <div class="row p-3">
         <asp:Label ID="lbHeadingConfirmedAttendee" runat="server" Text="Confirmed Attendees:" Font-Bold="True" Font-Size="Larger"></asp:Label>
         <asp:Label ID="lbEventConfirmedAttendee" CssClass="pl-2" runat="server" Text="" Font-Bold="True" Font-Size="Larger"></asp:Label>
@@ -83,7 +129,7 @@
         <asp:Repeater ID="repeaterConfirmedAttendees" runat="server" DataSourceID="attendeeDataSource">
             <ItemTemplate>
                 <div class="m-2 p-2 border shadow text-center">
-                    <asp:Image ID="imgConfirmedAttendees" ImageUrl=<%# "../../Public/Image/Uploads/"+ Eval("image") %> CssClass="img-thumbnail" runat="server" Height="75px" Width="75px" /><br />
+                    <asp:Image ID="imgConfirmedAttendees" ImageUrl='<%# "../../Public/Image/Uploads/User/"+ Eval("image") %>' CssClass="img-thumbnail" runat="server" Height="75px" Width="75px" /><br />
                     <%# Eval("fullname") %>
                 </div>
             </ItemTemplate>

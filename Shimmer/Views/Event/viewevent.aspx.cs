@@ -35,15 +35,18 @@ namespace Shimmer
             if (eventid != null)
             {
                 eventobj = new Event().GetEventById(int.Parse(eventid));
-                if (eventobj is null || eventobj.Status != 1) // check if event obj is present with the status of 1
+                if (eventobj is null || eventobj.Status < 0) // check if event obj is present with the status of 1
                 {
-                    Response.Redirect("events.aspx");
+                    Response.Redirect("/Views/Event/events.aspx");
                 }
                 lbBreadcrumbCurrent.Text = eventobj.Name;
                 lbEventName.Text = eventobj.Name;
                 lbEventDescription.Text = eventobj.Description;
+                lbEventContactName.Text = eventobj.ContactName;
+                lbEventContactNumber.Text = eventobj.ContactNumber;
+                lbEventContactEmail.Text = eventobj.ContactEmail;
                 //lbEventMinAttendee.Text = (eventobj.MinimumAttendee).ToString();
-                lbEventOrganizedBy.Text = (eventobj.OrganizedBy).ToString();
+                lbEventOrganizedBy.Text = eventobj.getEventOwner().FullName.ToString();
                 lbEventDate.Text = Convert.ToDateTime(eventobj.StartDateTime).ToString("dddd, dd MMMM yyyy");
                 lbEventTime.Text = Convert.ToDateTime(eventobj.StartDateTime).ToString("hh:mm tt");
 
@@ -101,6 +104,8 @@ namespace Shimmer
                             if (eventAssociationList[i].Status == "Accepted")
                             {
                                 btnInfoEvent.CssClass = "btn btn-success btn-lg btn-block";
+                                //Close join as group if accepted into event already.
+                                groupDiv.Visible = false;
                             }
                             else
                             {
@@ -112,7 +117,7 @@ namespace Shimmer
                         else if (eventAssociationList[i].UserId == currentUserId && eventAssociationList[i].Status =="Pending")// todo change this to current user .done
                         {
                             btnJoinEvent.Visible = false;
-                            btnLeaveEvent.Visible = true;
+                            btnLeaveEvent.Visible = true; 
                         }
                     }
                     
@@ -126,6 +131,34 @@ namespace Shimmer
             else
             {
                 Response.Redirect("/Views/Event/events.aspx");
+            }
+
+            if (!IsPostBack)
+            {
+                // need to force select command and databind again. else dropdownlist.count will be 0
+                groupListSqlDataSource.SelectCommand = "SELECT * FROM [Group] WHERE ([Leader] = @Leader)";
+                ddlGroupList.DataBind();
+            }
+
+            btnGroupInfoEvent.Visible = false;
+            btnGroupLeaveEvent.Visible = false;
+            // hide group div if not leader of group
+            if (ddlGroupList.Items.Count == 0)
+            {
+                groupDiv.Visible = false;
+            }
+            checkEventClosed();
+        }
+
+        protected void checkEventClosed()
+        {
+            if (eventobj.Status == 0)
+            {
+                groupDiv.Visible = false;
+                btnJoinEvent.Visible = false;
+                btnInfoEvent.Visible = true;
+                btnInfoEvent.CssClass = "btn btn-info btn-lg btn-block";
+                btnInfoEvent.Text = "Event Closed";
             }
         }
 
@@ -184,6 +217,24 @@ namespace Shimmer
             //todo change 1 to current user
             eventobj.UserLeaveEvent(int.Parse(eventid), currentUserId);
             Response.Redirect("/Views/Event/events.aspx");
+        }
+
+        protected void btnGroupJoinEvent_Click(object sender, EventArgs e)
+        {
+            int groupId = int.Parse(ddlGroupList.SelectedValue);
+            try
+            {
+                eventobj.GroupJoinEvent(int.Parse(eventid), groupId);
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                Response.Redirect("/Views/Event/events.aspx");
+            }
+            catch (Exception) //Catch Others
+            {
+                Response.Redirect("/Views/index.aspx");
+            }
+
         }
     }
 }

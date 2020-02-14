@@ -54,7 +54,7 @@ namespace Shimmer
             group.updateMemberNum(group, Convert.ToInt32(groupId.Value));
             group.memberJoinGroupRecord(group, Convert.ToInt32(groupId.Value), group.getNameById(Convert.ToInt32(applicant.Value)));
             Session["approve"] = true;
-            Response.Redirect("ApplicationManagement.aspx");
+            Response.Redirect("GroupApplicationManagement.aspx");
         }
 
         protected void Reject_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace Shimmer
             HiddenField id = (HiddenField)item.FindControl("applicationId");
             group.updateApplicationToReject(group, Convert.ToInt32(id.Value));
             Session["reject"] = true;
-            Response.Redirect("ApplicationManagement.aspx");
+            Response.Redirect("GroupApplicationManagement.aspx");
         }
     }
 }

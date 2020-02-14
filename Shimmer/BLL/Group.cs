@@ -229,12 +229,12 @@ namespace Shimmer
             string DBConnect = ConfigurationManager.ConnectionStrings["ShimmerConnectionString"].ConnectionString;
             SqlConnection Conn = new SqlConnection(DBConnect);
 
-            string command = "Select * From [User] WHERE Id = " + Id.ToString();
+            string command = "Select * From [Account] WHERE Id = " + Id.ToString();
             Conn.Open();
             new SqlDataAdapter(command, Conn).Fill(ds);
 
             Conn.Close();
-            return ds.Tables[0].Rows[0]["Name"].ToString();
+            return ds.Tables[0].Rows[0]["fullname"].ToString();
         }
 
         public void updateMemberNum(Group group, int Id)
@@ -306,6 +306,20 @@ namespace Shimmer
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        public DataSet getOwnedGroups(int userId)
+        {
+            DataSet ds = new DataSet();
+            string DBConnect = ConfigurationManager.ConnectionStrings["ShimmerConnectionString"].ConnectionString;
+            SqlConnection Conn = new SqlConnection(DBConnect);
+
+            string command = "Select * From [Group] WHERE Leader = " + userId;
+            Conn.Open();
+            new SqlDataAdapter(command, Conn).Fill(ds);
+
+            Conn.Close();
+            return ds;
         }
     }
 }

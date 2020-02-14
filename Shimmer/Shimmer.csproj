@@ -758,13 +758,16 @@
     <Content Include="Views\Donations\FundraiserView.aspx" />
     <Content Include="Views\Donations\ManageFundraiser.aspx" />
     <Content Include="Views\Event\addevent.aspx" />
+    <Content Include="Views\Event\confirmevent.aspx" />
     <Content Include="Views\Event\editevent.aspx" />
+    <Content Include="Views\Event\eventmanagement.aspx" />
     <Content Include="Views\Event\events.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Public\Image\default.jpg" />
     <Content Include="Public\Image\event.jpg" />
     <Content Include="Public\Image\orgPhoto.png" />
     <Content Include="Public\Image\publicPhoto.png" />
+    <Content Include="Views\Event\groupevent.aspx" />
     <Content Include="Views\Event\userevent.aspx" />
     <Content Include="Views\Group\CreateGroup.aspx" />
     <Content Include="Views\Group\GroupApplicationManagement.aspx" />
@@ -844,12 +847,26 @@
     <Compile Include="BLL\Group.cs" />
     <Compile Include="DAL\AccountDAO.cs" />
     <Compile Include="DAL\EventDAO.cs" />
+    <Compile Include="Views\Event\confirmevent.aspx.cs">
+      <DependentUpon>confirmevent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Event\confirmevent.aspx.designer.cs">
+      <DependentUpon>confirmevent.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Event\editevent.aspx.cs">
       <DependentUpon>editevent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Event\editevent.aspx.designer.cs">
       <DependentUpon>editevent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Event\eventmanagement.aspx.cs">
+      <DependentUpon>eventmanagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Event\eventmanagement.aspx.designer.cs">
+      <DependentUpon>eventmanagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Event\events.aspx.cs">
       <DependentUpon>events.aspx</DependentUpon>
@@ -860,6 +877,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Event\groupevent.aspx.cs">
+      <DependentUpon>groupevent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Event\groupevent.aspx.designer.cs">
+      <DependentUpon>groupevent.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Event\userevent.aspx.cs">
       <DependentUpon>userevent.aspx</DependentUpon>
