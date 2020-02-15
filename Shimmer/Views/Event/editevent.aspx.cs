@@ -6,12 +6,17 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Shimmer.BLL;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+
+
 
 namespace Shimmer
 {
     public partial class editevent : System.Web.UI.Page
     {
         int currentUserId;
+        string ini_location;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -47,6 +52,7 @@ namespace Shimmer
 
                         imgEventImage.ImageUrl = "../../Public/Image/Uploads/" + eventobj.Image;
                     }
+                    ini_location = eventobj.Location;
                     tbEventName.Text = eventobj.Name;
                     tbEventLocation.Text = eventobj.Location;
                     tbEventPostalCode.Text = eventobj.PostalCode;
@@ -120,9 +126,6 @@ namespace Shimmer
             {
                 // check if name + date for duplicate later
                 eventobj.Name = tbEventName.Text;
-
-                System.Diagnostics.Debug.WriteLine("eventobj name: "+eventobj.Name);
-                System.Diagnostics.Debug.WriteLine("tbname :"+tbEventName.Text);
                 eventobj.Description = tbEventDescription.Text;
                 eventobj.Location = tbEventLocation.Text;
                 eventobj.PostalCode = tbEventPostalCode.Text;
@@ -161,12 +164,39 @@ namespace Shimmer
 
                 if (eventobj.UpdateEvent() == 1)
                 {
-                    Response.Redirect("../index.aspx");
+                    // location changed from initial
+                    if (eventobj.Location != ini_location)
+                    {
+                        string smsBody;
+                        foreach(var attendee in eventobj.getEventAttendees(eventid))
+                        {
+                            smsBody = "Hello, "+attendee.FullName+". The event " + eventobj.Name + " has changed location to " + eventobj.Location + ".";
+                            sendSmsLocationChanged(attendee.Phone, smsBody);
+                        }
+                    }
+                    Response.Redirect("/Views/Event/viewevent.aspx?eventid="+eventid);
                 }
 
                 Response.Redirect("events.aspx");
 
             }
         }
+
+        public void sendSmsLocationChanged(string phoneNumber, string smsBody)
+        {
+            const string accountSid = "ACe72638c17a7822825bd6660b4f2ae178";
+            const string authToken = "f0c353c4d1c5fc54";
+            const string authTokenSplit = "c3009e3fb0444d40";
+
+            TwilioClient.Init(accountSid, authToken+authTokenSplit);
+
+            var message = MessageResource.Create(
+                body: smsBody,
+                from: new Twilio.Types.PhoneNumber("+12017333913"),
+                to: new Twilio.Types.PhoneNumber("+65"+phoneNumber)
+            );
+
+
+        } 
     }
 }

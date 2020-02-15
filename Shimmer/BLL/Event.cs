@@ -158,5 +158,11 @@ namespace Shimmer.BLL
             Account ownerAccountObject = new Account().GetAccountById(this.OrganizedBy);
             return ownerAccountObject;
         }
+
+        public List<Account> getEventAttendees(int eventId)
+        {
+            EventDAO dao = new EventDAO();
+            return dao.getEventAttendees(eventId);
+        }
     }
 }

@@ -128,7 +128,7 @@ namespace Shimmer
                     eventobj.Image = randomFileName.ToString();
                 }
                 eventobj.AddEvent();
-                Response.Redirect("events.aspx");
+                Response.Redirect("/Views/Event/eventmanagement.aspx");
             }
 
 

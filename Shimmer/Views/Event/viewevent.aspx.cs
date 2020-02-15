@@ -17,7 +17,7 @@ namespace Shimmer
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // google maps api
+            // google maps api key, split as google found key on public github.
             string APIKeyPart1 = "AIzaSyCWLbnx9H1I-";
             string APIKeyPart2 = "HnwzHh9kbL8PyZvYGJydiQ";
             if (Session["userId"] is null)
@@ -181,7 +181,7 @@ namespace Shimmer
                 if (eventAssociationList[i].UserId == currentUserId)
                 {
                     eventobj.UserReJoinEvent(int.Parse(eventid), currentUserId);
-                    Response.Redirect("/Views/Event/events.aspx");
+                    Response.Redirect("/Views/Event/userevent.aspx");
                 }
 
                 
@@ -192,7 +192,7 @@ namespace Shimmer
             if (eventobj.UserJoinEvent(int.Parse(eventid), currentUserId) == 1)
             {
                 //success, todo have some popup
-                Response.Redirect("/Views/Event/events.aspx");
+                Response.Redirect("/Views/Event/userevent.aspx");
             }
             else
             {
@@ -225,6 +225,7 @@ namespace Shimmer
             try
             {
                 eventobj.GroupJoinEvent(int.Parse(eventid), groupId);
+                Response.Redirect("/Views/Event/groupevent.aspx");
             }
             catch (System.Data.SqlClient.SqlException)
             {

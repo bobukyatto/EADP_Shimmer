@@ -388,6 +388,31 @@ namespace Shimmer.DAL
 
             return result;
         }
+        public List<Account> getEventAttendees (int eventid)
+        {
+            string DBConnect = ConfigurationManager.ConnectionStrings["ShimmerConnectionString"].ConnectionString;
+            SqlConnection mySQLConnection = new SqlConnection(DBConnect);
+            string SQLStatement = "SELECT * FROM Account INNER JOIN EventAssociation ON Account.Id = EventAssociation.userId WHERE eventId = "+eventid;
+            SqlDataAdapter da = new SqlDataAdapter(SQLStatement, mySQLConnection);
+            DataSet ds = new DataSet();
+            //Step 4 -  Use the DataAdapter to fill the DataSet with data retrieved
+            da.Fill(ds);
+            List<Account> eveentAttendeeAccountList = new List<Account>();
+            int rec_cnt = ds.Tables[0].Rows.Count;
+            for (int i = 0; i < rec_cnt; i++)
+            {
+                DataRow row = ds.Tables[0].Rows[i];  // Sql command returns only one record
+                int id = int.Parse(row["id"].ToString());
+                string fullname = row["fullname"].ToString();
+                string email = row["email"].ToString();
+                string phone = row["phoneno"].ToString();
+                string usertype = row["usertype"].ToString();
+                Account acctObj = new Account(id, fullname, email, null, phone, usertype);
+                eveentAttendeeAccountList.Add(acctObj);
+            }
+
+            return eveentAttendeeAccountList;
+        }
 
 
     }

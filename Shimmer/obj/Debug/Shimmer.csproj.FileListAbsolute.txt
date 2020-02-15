@@ -325,3 +325,12 @@ C:\Users\Sharon Goh\source\repos\EADP_Shimmer\Shimmer\bin\roslyn\vbc.rsp
 C:\Users\Sharon Goh\source\repos\EADP_Shimmer\Shimmer\bin\roslyn\VBCSCompiler.exe
 C:\Users\Sharon Goh\source\repos\EADP_Shimmer\Shimmer\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Sharon Goh\source\repos\EADP_Shimmer\Shimmer\obj\Debug\Shimmer.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\EADP_Shimmer\Shimmer\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\User\Documents\GitHub\EADP_Shimmer\Shimmer\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\User\Documents\GitHub\EADP_Shimmer\Shimmer\bin\Newtonsoft.Json.dll
+C:\Users\User\Documents\GitHub\EADP_Shimmer\Shimmer\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\User\Documents\GitHub\EADP_Shimmer\Shimmer\bin\Twilio.dll
+C:\Users\User\Documents\GitHub\EADP_Shimmer\Shimmer\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\User\Documents\GitHub\EADP_Shimmer\Shimmer\bin\Newtonsoft.Json.xml
+C:\Users\User\Documents\GitHub\EADP_Shimmer\Shimmer\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\User\Documents\GitHub\EADP_Shimmer\Shimmer\bin\Twilio.xml

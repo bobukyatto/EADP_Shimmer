@@ -78,7 +78,7 @@
     </div>
 
     <div class="row p-3">
-        <asp:Label ID="lbHeadingContact" runat="server" Text="Contact Information" Font-Bold="True" Font-Size="Larger"></asp:Label>
+        <asp:Label ID="lbHeadingContact" runat="server" Text="Organizer Contact Information" Font-Bold="True" Font-Size="Larger"></asp:Label>
 
     </div>
     <div class="row p-3 border-bottom">
