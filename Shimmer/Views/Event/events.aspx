@@ -12,7 +12,9 @@
     </nav>
 
     <div class="row">
+        <asp:Button ID="btnUserEvent" runat="server" CssClass="btn btn-info btn-lg float-left ml-3" Text="Joined Events" onClick="btnUserEvent_Click" />
         <asp:Button ID="btnCreateEvent" runat="server" CssClass="btn btn-success btn-lg mx-auto" Text="Create Event" OnClick="btnCreateEvent_Click" />
+        <asp:Button ID="btnManageEvent" runat="server" CssClass="btn btn-primary btn-lg float-right mr-3" Text="Manage Events" onclick="btnManageEvent_Click"  />
     </div>
     <div class="row p-3">
         <asp:Label ID="lbHeading" runat="server" Text="Current events" Font-Bold="True" Font-Size="Larger"></asp:Label>

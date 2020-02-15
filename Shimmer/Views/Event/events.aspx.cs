@@ -15,7 +15,9 @@ namespace Shimmer
         {
             if (Session["userId"] is null)
             {
+                btnUserEvent.Visible = false;
                 btnCreateEvent.Visible = false;
+                btnManageEvent.Visible = false;
             }
 
             
@@ -48,17 +50,7 @@ namespace Shimmer
             }
             
         }
-
-
-
         
-
-
-
-        protected void btnCreateEvent_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("addevent.aspx");
-        }
 
         protected void ddlSort_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -67,5 +59,21 @@ namespace Shimmer
                 
             }
         }
+
+        protected void btnUserEvent_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Views/Event/userevent.aspx");
+        }
+
+        protected void btnCreateEvent_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Views/Event/addevent.aspx");
+        }
+
+        protected void btnManageEvent_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Views/Event/eventmanagement.aspx");
+        }
+
     }
 }

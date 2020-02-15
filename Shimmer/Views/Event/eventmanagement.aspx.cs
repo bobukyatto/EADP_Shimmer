@@ -14,6 +14,10 @@ namespace Shimmer
         protected void Page_Load(object sender, EventArgs e)
         {
             eventobj = new Event();
+            if (Session["userId"] is null)
+            {
+                Response.Redirect("/Views/User/Login.aspx");
+            }
         }
         
 

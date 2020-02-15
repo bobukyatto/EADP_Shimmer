@@ -17,7 +17,7 @@ namespace Shimmer
         {
             if (Session["userId"] is null)
             {
-                Response.Redirect("../User/Login.aspx");
+                Response.Redirect("/Views/User/Login.aspx");
             }
             else
             {

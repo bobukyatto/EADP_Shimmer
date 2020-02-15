@@ -13,6 +13,15 @@ namespace Shimmer {
     public partial class events {
         
         /// <summary>
+        /// btnUserEvent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUserEvent;
+        
+        /// <summary>
         /// btnCreateEvent control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace Shimmer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCreateEvent;
+        
+        /// <summary>
+        /// btnManageEvent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnManageEvent;
         
         /// <summary>
         /// lbHeading control.
