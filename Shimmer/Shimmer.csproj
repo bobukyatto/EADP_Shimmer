@@ -775,7 +775,6 @@
     <Content Include="Views\Donations\FundraiserView.aspx" />
     <Content Include="Views\Donations\ManageFundraiser.aspx" />
     <Content Include="Views\Event\addevent.aspx" />
-    <Content Include="Views\Event\confirmevent.aspx" />
     <Content Include="Views\Event\editevent.aspx" />
     <Content Include="Views\Event\eventmanagement.aspx" />
     <Content Include="Views\Event\events.aspx" />
@@ -864,13 +863,6 @@
     <Compile Include="BLL\Group.cs" />
     <Compile Include="DAL\AccountDAO.cs" />
     <Compile Include="DAL\EventDAO.cs" />
-    <Compile Include="Views\Event\confirmevent.aspx.cs">
-      <DependentUpon>confirmevent.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Event\confirmevent.aspx.designer.cs">
-      <DependentUpon>confirmevent.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Event\editevent.aspx.cs">
       <DependentUpon>editevent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

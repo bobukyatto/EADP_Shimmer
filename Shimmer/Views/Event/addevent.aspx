@@ -19,12 +19,12 @@
         </div>
 
         <div class="col-sm-5 pb-3">
-            <asp:Label ID="lbEventName" runat="server" Text="Name of Event:"></asp:Label>
-            <asp:TextBox ID="tbEventName" runat="server" CssClass="form-control" placeholder="Give your event a name!"></asp:TextBox>
+            <asp:Label ID="lbEventName" runat="server" Text="Name of Event *"></asp:Label>
+            <asp:TextBox ID="tbEventName" runat="server" CssClass="form-control" placeholder="Give your event a name!" required></asp:TextBox>
         </div>
         <div class="col-sm-3 pb-3">
-            <asp:Label ID="lbEventLocation" runat="server" Text="Address of Event"></asp:Label>
-            <asp:TextBox ID="tbEventLocation" runat="server" CssClass="form-control" placeholder="10 Jalan Besar"></asp:TextBox>
+            <asp:Label ID="lbEventLocation" runat="server" Text="Address of Event *"></asp:Label>
+            <asp:TextBox ID="tbEventLocation" runat="server" CssClass="form-control" placeholder="10 Jalan Besar" required></asp:TextBox>
         </div>
         <div class="col-sm-4 pb-3">
             <asp:Label ID="lbEventPostalCode" runat="server" Text="Postal Code of Event"></asp:Label>
@@ -50,30 +50,30 @@
         </div>
         <div class="col-sm-2 pb-3">
             <asp:Label ID="lbMaxAttendee" runat="server" Text="Maximum attendee"></asp:Label>
-            <asp:TextBox ID="tbEventMaxAttendee" runat="server" CssClass="form-control" placeholder="50" TextMode="Number"></asp:TextBox>
+            <asp:TextBox ID="tbEventMaxAttendee" runat="server" CssClass="form-control" value="50" TextMode="Number"></asp:TextBox>
         </div>
 
         <div class="col-sm-2 pb-3">
-            <asp:Label ID="lbEventDate" runat="server" Text="Event Date"></asp:Label>
-            <asp:TextBox ID="tbEventDate" runat="server" CssClass="form-control" TextMode="Date"></asp:TextBox>
+            <asp:Label ID="lbEventDate" runat="server" Text="Event Date *"></asp:Label>
+            <asp:TextBox ID="tbEventDate" runat="server" CssClass="form-control" TextMode="Date" required></asp:TextBox>
         </div>
         <div class="col-sm-2 pb-3">
-            <asp:Label ID="lbEventTime" runat="server" Text="Event Time"></asp:Label>
-            <asp:TextBox ID="tbEventTime" runat="server" CssClass="form-control" TextMode="Time"></asp:TextBox>
+            <asp:Label ID="lbEventTime" runat="server" Text="Event Time *"></asp:Label>
+            <asp:TextBox ID="tbEventTime" runat="server" CssClass="form-control" TextMode="Time" required></asp:TextBox>
         </div>
         <div class="col-sm-2 pb-3">
-            <asp:Label ID="lbEventDurationHours" runat="server" Text="Event Duration(Hours)"></asp:Label>
-            <asp:TextBox ID="tbEventDurationHours" runat="server" CssClass="form-control" placeholder="01 Hours"></asp:TextBox>
+            <asp:Label ID="lbEventDurationHours" runat="server" Text="Duration(Hours) *"></asp:Label>
+            <asp:TextBox ID="tbEventDurationHours" runat="server" CssClass="form-control" placeholder="01 Hours" required></asp:TextBox>
         </div>
         <div class="col-sm-2 pb-3">
-            <asp:Label ID="lbEventDurationMinutes" runat="server" Text="Event Duration(Minutes)"></asp:Label>
-            <asp:TextBox ID="tbEventDurationMinutes" runat="server" CssClass="form-control" placeholder="00 Minutes"></asp:TextBox>
+            <asp:Label ID="lbEventDurationMinutes" runat="server" Text="Duration(Minutes) *"></asp:Label>
+            <asp:TextBox ID="tbEventDurationMinutes" runat="server" CssClass="form-control" placeholder="00 Minutes" required></asp:TextBox>
         </div>
 
 
         <div class="col-md-12 pb-3">
-            <asp:Label ID="lbEventDescription" runat="server" Text="Description"></asp:Label>
-            <asp:TextBox ID="tbEventDescription" runat="server" CssClass="form-control" placeholder="Description of event" MaxLength="512" TextMode="MultiLine" Rows="10"></asp:TextBox>
+            <asp:Label ID="lbEventDescription" runat="server" Text="Description *"></asp:Label>
+            <asp:TextBox ID="tbEventDescription" runat="server" CssClass="form-control" placeholder="Description of event" MaxLength="512" TextMode="MultiLine" Rows="10" required></asp:TextBox>
         </div>
         <div class="col-md-12 pb-3">
         <asp:Label ID="lbEventImage" runat="server" Text="Event Image"></asp:Label>

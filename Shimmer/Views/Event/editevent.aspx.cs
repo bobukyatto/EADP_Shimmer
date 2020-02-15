@@ -164,8 +164,8 @@ namespace Shimmer
 
                 if (eventobj.UpdateEvent() == 1)
                 {
-                    // location changed from initial
-                    if (eventobj.Location != ini_location)
+                    // if location is changed
+                    if (tbEventLocation.Text != ini_location)
                     {
                         string smsBody;
                         foreach(var attendee in eventobj.getEventAttendees(eventid))

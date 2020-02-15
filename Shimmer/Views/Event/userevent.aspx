@@ -12,6 +12,9 @@
             </li>
         </ol>
     </nav>
+    <div class="row mb-4">
+        <asp:Button ID="btnGroupEvents" runat="server" CssClass="btn btn-info btn-lg float-left ml-3" Text="Group Events" onClick="btnGroupEvents_Click" />
+    </div>
     <ul class="nav nav-tabs nav-justified" id="eventTab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="Open-tab" data-toggle="tab" href="#Open" role="tab" aria-controls="Open" aria-selected="true">Open Events</a>
@@ -20,6 +23,7 @@
             <a class="nav-link" id="Closed-tab" data-toggle="tab" href="#Closed" role="tab" aria-controls="Closed" aria-selected="false">Closed Events</a>
         </li>
     </ul>
+    
     <div class="tab-content" id="eventTabContent">
 
         <div class="tab-pane fade show active" id="Open" role="tabpanel" aria-labelledby="Open-tab">

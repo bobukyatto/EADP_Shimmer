@@ -23,5 +23,10 @@ namespace Shimmer
             }
 
         }
+
+        protected void btnGroupEvents_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Views/Event/groupevent.aspx");
+        }
     }
 }

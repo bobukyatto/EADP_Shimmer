@@ -12,7 +12,7 @@
         </ol>
     </nav>
     <div class="text-center mb-2">
-        <asp:Image ID="imgEventImage" CssClass=" rounded border" runat="server" />
+        <asp:Image ID="imgEventImage" CssClass=" rounded border" Height="300" Width="450" runat="server" />
     </div>
     <div class="custom-file">
         <label class="custom-file-label" for="customFile">Choose file</label>

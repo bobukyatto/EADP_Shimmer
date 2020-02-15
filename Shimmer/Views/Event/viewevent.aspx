@@ -105,7 +105,7 @@
         <div class="row p-3">
             <div class="col-6">
                 <asp:Label ID="lbGroupList" runat="server" Text="Select Group:" Font-Bold="True" Font-Size="Larger"></asp:Label>
-                <asp:DropDownList ID="ddlGroupList" CssClass="w-100" runat="server" DataSourceID="groupListSqlDataSource" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
+                <asp:DropDownList ID="ddlGroupList" CssClass="form-control w-100" runat="server" DataSourceID="groupListSqlDataSource" DataTextField="Name" DataValueField="Id"></asp:DropDownList>
                 <asp:SqlDataSource ID="groupListSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ShimmerConnectionString %>" SelectCommand="SELECT * FROM [Group] WHERE ([Leader] = @Leader)">
                     <SelectParameters>
                         <asp:SessionParameter Name="Leader" SessionField="userId" Type="String" />
